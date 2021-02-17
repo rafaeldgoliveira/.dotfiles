@@ -1,0 +1,244 @@
+{
+	"$schema": "https://aka.ms/terminal-profiles-schema",
+	"actions": [
+		{
+			"command": {
+				"action": "copy",
+				"singleLine": false
+			},
+			"keys": "ctrl+c"
+		},
+		{
+			"command": "paste",
+			"keys": "ctrl+v"
+		},
+		{
+			"command": "find",
+			"keys": "ctrl+f"
+		},
+		{
+			"command": {
+				"action": "splitPane",
+				"split": "auto",
+				"splitMode": "duplicate"
+			},
+			"keys": "alt+shift+d"
+		},
+		{
+			"command": {
+				"action": "splitPane",
+				"split": "vertical"
+			},
+			"keys": "alt+shift+v"
+		},
+		{
+			"command": {
+				"action": "splitPane",
+				"split": "horizontal"
+			},
+			"keys": "alt+shift+h"
+		},
+		{
+			"command": {
+				"action": "moveFocus",
+				"direction": "down"
+			},
+			"keys": "alt+down"
+		},
+		{
+			"command": {
+				"action": "moveFocus",
+				"direction": "left"
+			},
+			"keys": "alt+left"
+		},
+		{
+			"command": {
+				"action": "moveFocus",
+				"direction": "right"
+			},
+			"keys": "alt+right"
+		},
+		{
+			"command": {
+				"action": "moveFocus",
+				"direction": "up"
+			},
+			"keys": "alt+up"
+		},
+		{
+			"command": {
+				"action": "resizePane",
+				"direction": "down"
+			},
+			"keys": "alt+shift+down"
+		},
+		{
+			"command": {
+				"action": "resizePane",
+				"direction": "left"
+			},
+			"keys": "alt+shift+left"
+		},
+		{
+			"command": {
+				"action": "resizePane",
+				"direction": "right"
+			},
+			"keys": "alt+shift+right"
+		},
+		{
+			"command": {
+				"action": "resizePane",
+				"direction": "up"
+			},
+			"keys": "alt+shift+up"
+		},
+		{
+			"command": "closePane",
+			"keys": "alt+shift+w"
+		},
+		{
+			"command": "newTab",
+			"keys": "ctrl+t"
+		},
+		{
+			"command": "duplicateTab",
+			"keys": "ctrl+d"
+		}
+	],
+	"copyFormatting": true,
+	"copyOnSelect": true,
+	"defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+	"launchMode": "maximized",
+	"profiles": {
+		"defaults": {
+			"antialiasingMode": "cleartype",
+			"colorScheme": "Cobalt2",
+			"fontFace": "FiraCode NF",
+			"fontSize": 12,
+			"historySize": 32768
+		},
+		"list": [
+			{
+				"commandline": "cmd.exe",
+				"guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+				"hidden": false,
+				"name": "Prompt de comando",
+				"startingDirectory": "~"
+			},
+			{
+				"guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+				"hidden": false,
+				"name": "PowerShell 7",
+				"source": "Windows.Terminal.PowershellCore",
+				"startingDirectory": "~"
+			},
+			{
+				"guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+				"hidden": false,
+				"name": "Ubuntu WSL2",
+				"source": "Windows.Terminal.Wsl",
+				"startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\rafael"
+			},
+			{
+				"guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+				"hidden": true,
+				"name": "Azure Cloud Shell",
+				"source": "Windows.Terminal.Azure"
+			},
+			{
+				"commandline": "powershell.exe",
+				"guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+				"hidden": true,
+				"name": "Windows PowerShell"
+			}
+		]
+	},
+	"schemes": [
+		{
+			"background": "#1e2127",
+			"black": "#1e2127",
+			"blue": "#61afef",
+			"brightBlack": "#5c6370",
+			"brightBlue": "#61afef",
+			"brightCyan": "#56b6c2",
+			"brightGreen": "#98c379",
+			"brightPurple": "#c678dd",
+			"brightRed": "#e06c75",
+			"brightWhite": "#ffffff",
+			"brightYellow": "#d19a66",
+			"cyan": "#56b6c2",
+			"foreground": "#abb2bf",
+			"green": "#98c379",
+			"name": "OneDark",
+			"purple": "#c678dd",
+			"red": "#e06c75",
+			"white": "#abb2bf",
+			"yellow": "#d19a66"
+		},
+		{
+			"background": "#001e27",
+			"black": "#002831",
+			"blue": "#2176c7",
+			"brightBlack": "#475b62",
+			"brightBlue": "#708284",
+			"brightCyan": "#819090",
+			"brightGreen": "#475b62",
+			"brightPurple": "#5956ba",
+			"brightRed": "#bd3613",
+			"brightWhite": "#fcf4dc",
+			"brightYellow": "#536870",
+			"cyan": "#259286",
+			"foreground": "#708284",
+			"green": "#738a05",
+			"name": "Solarized Dark",
+			"purple": "#c61c6f",
+			"red": "#d11c24",
+			"white": "#eae3cb",
+			"yellow": "#a57706"
+		},
+		{
+			"background": "#132738",
+			"black": "#000000",
+			"blue": "#1460d2",
+			"brightBlack": "#555555",
+			"brightBlue": "#5555ff",
+			"brightCyan": "#6ae3fa",
+			"brightGreen": "#3bd01d",
+			"brightPurple": "#ff55ff",
+			"brightRed": "#f40e17",
+			"brightWhite": "#ffffff",
+			"brightYellow": "#edc809",
+			"cyan": "#00bbbb",
+			"foreground": "#ffffff",
+			"green": "#38de21",
+			"name": "Cobalt2",
+			"purple": "#ff005d",
+			"red": "#ff0000",
+			"white": "#bbbbbb",
+			"yellow": "#ffe50a"
+		},
+		{
+			"background": "#212121",
+			"black": "#21222c",
+			"blue": "#82aaff",
+			"brightBlack": "#545454",
+			"brightBlue": "#d6acff",
+			"brightCyan": "#a4ffff",
+			"brightGreen": "#69ff94",
+			"brightPurple": "#ff92df",
+			"brightRed": "#ff6e6e",
+			"brightWhite": "#f8f8f2",
+			"brightYellow": "#ffcb6b",
+			"cyan": "#8be9fd",
+			"foreground": "#f8f8f2",
+			"green": "#50fa7b",
+			"name": "Dracula+",
+			"purple": "#c792ea",
+			"red": "#ff5555",
+			"white": "#f8f8f2",
+			"yellow": "#ffcb6b"
+		}
+	]
+}
