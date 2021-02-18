@@ -108,19 +108,19 @@ choco install 7zip `
 [string]$WTSettings = Resolve-Path ~\AppData\Local\Packages\Microsoft.WindowsTerminalPreview*\LocalState\settings.json
 
 # Deleta as configurações existentes
-Remove-Item '~\.editorconfig'
-Remove-Item '~\.gitattributes'
-Remove-Item '~\.gitconfig'
-Remove-Item '~\.npmrc'
-Remove-Item '~\.wslconfig'
-Remove-Item '~\.yarnrc'
-Remove-Item '~\android_dev.ps1'
-Remove-Item '~\kill_port.ps1'
-Remove-Item '~\wsl2_network.ps1'
-Remove-Item '~\.ssh' -recurse
-Remove-Item '.\.ssh\' -recurse
+Remove-Item '~\.editorconfig' -Force
+Remove-Item '~\.gitattributes' -Force
+Remove-Item '~\.gitconfig' -Force
+Remove-Item '~\.npmrc' -Force
+Remove-Item '~\.wslconfig' -Force
+Remove-Item '~\.yarnrc' -Force
+Remove-Item '~\android_dev.ps1' -Force
+Remove-Item '~\kill_port.ps1' -Force
+Remove-Item '~\wsl2_network.ps1' -Force
+Remove-Item '~\.ssh' -Recurse -Force
+Remove-Item '.\.ssh\' -Recurse -Force
 
-Remove-Item $WTSettings
+Remove-Item $WTSettings -Force
 
 # Extrai chaves SSH
 7z e $currentDir'\.ssh.zip' -o'.ssh'
