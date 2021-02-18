@@ -1,24 +1,23 @@
 #Requires -RunAsAdministrator
 
-Write-Host "Antes de prosseguir com script é necessário instalar alguns aplicativos pela Microsoft Store."
-Write-Host "-----------------------------------------"
-Write-Host "   Windows Terminal Preview"
-Write-Host "-----------------------------------------"
+Write-Host "Antes de prosseguir com script é necessário instalar pela Microsoft Store:" -ForegroundColor Green
+Write-Host "Windows Terminal Preview" -ForegroundColor Yellow
 Write-Host ""
-Write-Host ""
-Write-Host "Aplicativos sugeridos:"
-Write-Host "   Alienware Command Center"
-Write-Host "   Seu Telefone"
+Write-Host "-----------------------------------------"
+Write-Host "Aplicativos sugeridos:" -ForegroundColor Green
+Write-Host "Seu Telefone" -ForegroundColor Yellow
+Write-Host "Alienware Command Center" -ForegroundColor Yellow
 Write-Host "-----------------------------------------"
 Write-Host ""
-Write-Host ""
-Write-Host "Aperte qualquer tecla para continuar..."
+Write-Host "Aperte qualquer tecla para continuar..." -ForegroundColor Green
 $x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
 # Instala o Chocolatey
+Write-Host "Instalando o Chocolatey" -ForegroundColor Green
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 # Instala os pacotes
+Write-Host "Instalando os pacotes do Chocolatey" -ForegroundColor Green
 choco install 7zip `
 							adoptopenjdk8 `
 							androidstudio `
@@ -108,6 +107,7 @@ choco install 7zip `
 [string]$WTSettings = Resolve-Path ~\AppData\Local\Packages\Microsoft.WindowsTerminalPreview*\LocalState\settings.json
 
 # Deleta as configurações existentes
+Write-Host "Deletando as configurações existentes..." -ForegroundColor Green
 Remove-Item '~\.editorconfig' -Force
 Remove-Item '~\.gitattributes' -Force
 Remove-Item '~\.gitconfig' -Force
@@ -118,14 +118,16 @@ Remove-Item '~\android_dev.ps1' -Force
 Remove-Item '~\kill_port.ps1' -Force
 Remove-Item '~\wsl2_network.ps1' -Force
 Remove-Item '~\.ssh' -Recurse -Force
-Remove-Item '.\.ssh\' -Recurse -Force
 
 Remove-Item $WTSettings -Force
 
 # Extrai chaves SSH
+Remove-Item $currentDir'\.ssh' -Recurse -Force
+Write-Host "Deletando e extraindo as chaves SSH..." -ForegroundColor Green
 7z e $currentDir'\.ssh.zip' -o'.ssh'
 
 # Cria os links simbólicos
+Write-Host "Criando os links simbólicos para as configurações..." -ForegroundColor Green
 New-Item -ItemType SymbolicLink -Path '~\.ssh' -Target $currentDir'\.ssh'
 New-Item -ItemType SymbolicLink -Path '~\.editorconfig' -Target $currentDir'\.editorconfig'
 New-Item -ItemType SymbolicLink -Path '~\.gitattributes' -Target $currentDir'\.gitattributes'
@@ -139,6 +141,7 @@ New-Item -ItemType SymbolicLink -Path '~\wsl2_network.ps1' -Target $currentDir'\
 New-Item -ItemType SymbolicLink -Path $WTSettings -Target $currentDir'\prefs\windows_terminal.json'
 
 # Importa certificados do SERPRO
+Write-Host "Instalando os certificados do SERPRO..." -ForegroundColor Green
 Import-Certificate -Filepath $currentDir\certificados_serpro\AC_Raiz_SERPRO.crt -CertStoreLocation 'Cert:\CurrentUser\Root'
 Import-Certificate -Filepath $currentDir\certificados_serpro\AC_SERPRO_Intra_SSL.crt -CertStoreLocation 'Cert:\CurrentUser\Root'
 Import-Certificate -Filepath $currentDir\certificados_serpro\acserproacfv5.crt -CertStoreLocation 'Cert:\CurrentUser\Root'
@@ -146,6 +149,7 @@ Import-Certificate -Filepath $currentDir\certificados_serpro\acserprov4.crt -Cer
 Import-Certificate -Filepath $currentDir\certificados_serpro\icpbrasilv5.crt -CertStoreLocation 'Cert:\CurrentUser\Root'
 
 # Executa as alterações no registro do Windows
+Write-Host "Executando as alterações no registro do Windows..." -ForegroundColor Green
 reg import $currentDir'\windows_regs\Disable_Snipping_Tool\Disable_Snipping_Tool.reg'
 reg import $currentDir'\windows_regs\Disable-Bing-in-the-Start-Menu\Disable Bing Searches.reg'
 reg import $currentDir'\windows_regs\Disable-Cortana\Disable Cortana.reg'
@@ -158,12 +162,14 @@ reg import $currentDir'\windows_regs\Taskbar Last Active Click Hacks\Enable Last
 reg import $currentDir'\windows_regs\Time Fix - Windows\Windows Universal Time - On.reg'
 
 # Cria link simbolico para backups da Apple
+Write-Host "Criando um link simbolico para a pasta de backups Apple..." -ForegroundColor Green
 Remove-Item '~\AppData\Roaming\Apple Computer\MobileSync\Backup'
 New-Item -ItemType SymbolicLink -Path '~\AppData\Roaming\Apple Computer\MobileSync\Backup' -Target 'D:\Backups\Apple'
 
 Set-Alias -Name sudo -Value gsudo
 
 # Oh-My-Posh
+Write-Host "Instalando e configurando o Oh-My-Posh..." -ForegroundColor Green
 Remove-Item 'D:\OneDrive\Documentos\PowerShell\Microsoft.PowerShell_profile.ps1'
 Install-Module oh-my-posh -Scope CurrentUser -AllowPrerelease
 Install-Module posh-git -Scope CurrentUser -AllowPrerelease
@@ -172,7 +178,9 @@ Update-Module posh-git -Scope CurrentUser
 New-Item -ItemType SymbolicLink -Path 'D:\OneDrive\Documentos\PowerShell\Microsoft.PowerShell_profile.ps1' -Target $currentDir'\prefs\powershell_profile.ps1'
 
 # Yarn Packages
+Write-Host "Instalando os pacotes Yarn..." -ForegroundColor Green
 yarn global add @angular/cli react-native-cli cjs-to-es6 create-react-app json-server react react-native @react-native-community/cli diff-so-fancy git-jump expo-cli eslint prettier eslint-config-prettier eslint-plugin-prettier npm-check nodemon
 
 # NPM packages
+Write-Host "Instalando os pacotes NPM..." -ForegroundColor Green
 npm install -g npm@7
