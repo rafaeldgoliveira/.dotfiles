@@ -179,7 +179,7 @@ New-Item -ItemType SymbolicLink -Path 'D:\OneDrive\Documentos\PowerShell\Microso
 
 # Yarn Packages
 Write-Host "Instalando os pacotes Yarn..." -ForegroundColor Green
-yarn global add @angular/cli react-native-cli cjs-to-es6 create-react-app json-server react react-native @react-native-community/cli diff-so-fancy git-jump expo-cli eslint prettier eslint-config-prettier eslint-plugin-prettier npm-check nodemon
+yarn global add @angular/cli react-native-cli cjs-to-es6 create-react-app json-server react react-native @react-native-community/cli diff-so-fancy git-jump expo-cli eslint prettier eslint-config-prettier eslint-plugin-prettier npm-check nodemon local-web-server
 
 # NPM packages
 Write-Host "Instalando os pacotes NPM..." -ForegroundColor Green
