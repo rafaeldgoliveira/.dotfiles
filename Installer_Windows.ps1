@@ -48,7 +48,6 @@ choco install 7zip `
 							gamesavemanager `
 							geforce-experience `
 							git `
-							git-lfs `
 							google-backup-and-sync `
 							googlechrome `
 							gpu-z `
@@ -139,6 +138,12 @@ New-Item -ItemType SymbolicLink -Path '~\android_dev.ps1' -Target $currentDir'\a
 New-Item -ItemType SymbolicLink -Path '~\kill_port.ps1' -Target $currentDir'\kill_port.ps1'
 New-Item -ItemType SymbolicLink -Path '~\wsl2_network.ps1' -Target $currentDir'\wsl2_network.ps1'
 New-Item -ItemType SymbolicLink -Path $WTSettings -Target $currentDir'\prefs\windows_terminal.json'
+
+# Hosts
+Write-Host "Criando o link para o arquivo de hosts..." -ForegroundColor Green
+# Copy-Item $currentDir'\.hosts.windows' -Destination 'C:\Windows\System32\drivers\etc\hosts'
+sudo Remove-Item 'C:\Windows\System32\drivers\etc\hosts' -Recurse -Force
+New-Item -ItemType SymbolicLink -Path 'C:\Windows\System32\drivers\etc\hosts' -Target $currentDir'\.hosts.windows'
 
 # Importa certificados do SERPRO
 Write-Host "Instalando os certificados do SERPRO..." -ForegroundColor Green

@@ -1,19 +1,22 @@
 [alias]
+# strike
 	# View abbreviated SHA, description, and history graph of the latest 20 commits.
-	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+	l = log --pretty=format:\"%C(magenta)%ad %C(yellow)%h | %C(green)[%<(15,trunc)%an] %C(white)%s %d\" --decorate --date=format:"%d-%m-%Y" --abbrev-commit -n 20
+	lg = log --pretty=format:\"%C(magenta)%ad %C(yellow)%h | %C(green)[%<(15,trunc)%an] %C(white)%s %d\" --decorate --date=format:"%d-%m-%Y" --abbrev-commit -n 20 --graph
 
 	# View the current working tree status using the short format.
 	s = status -s
 
 	# Push code to remote
-	ps = push origin HEAD
+	ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
 
-	# Delete branch
-	bd = branch -D
+	# Pull in remote changes for the current repository and all its submodules.
+	pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD) --recurse-submodules"
+	p = "pull"
 
 	# Reset current branch
-	rh = reset --hard origin/HEAD
-	rs = reset --soft origin/HEAD
+	rh = "!git reset --hard $(git rev-parse --abbrev-ref HEAD)"
+	rs = "!git reset --soft $(git rev-parse --abbrev-ref HEAD)"
 
 	# Show the diff between the latest commit and the current state.
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
@@ -21,25 +24,52 @@
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state.
 	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
 
-	# Pull in remote changes for the current repository and all its submodules.
-	p = pull --recurse-submodules
-
 	# Clone a repository including all submodules.
 	c = clone --recursive
 
 	# Commit all changes.
-	ac = git add -A && git commit -m
+	ac = !git add -A && git commit -m
 
-	# Switch to a branch, creating it if necessary.
-	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+	# Undo last commit
+	uc = reset --soft HEAD~1
 
 	# Show verbose output about tags, branches or remotes
-	tags = tag -l
-	branches = branch --all
+	t = log --tags --no-walk --pretty=\"format:%C(magenta)%ad %C(yellow)%d %C(green)%an\" --decorate --date=format:"%d-%m-%Y"
+
+	# Switch to a branch, creating it if necessary.
+	go = "!f() { git checkout \"$1\" || git checkout -b \"$1\" 2> /dev/null; }; f"
+
+	# Delete branch
+	del = branch -D
+
+	# Get branch name
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+
+	# Lista all branches
+	ba = branch --format='%(color:magenta)%(committerdate:format:"%d-%m-%Y") %(HEAD)%(color:yellow)%(refname:short) %(color:white)%(subject) %(color:green)%(authorname)%(color:reset)' --sort=-committerdate --all
+
+	# List local branches
+	b = branch --format='%(color:magenta)%(committerdate:format:"%d-%m-%Y") %(HEAD)%(color:yellow)%(refname:short) %(color:white)%(subject) %(color:green)%(authorname)%(color:reset)' --sort=-committerdate
+
+	# Delete the remote version of the current branch
+	unpublish = "!git push origin :$(git branch-name)"
+
+	# Delete a branch and recreate it from master
+	recreate = "!f() { [[ -n $@ ]] && git checkout \"$@\" && git unpublish && git checkout master && git branch -D \"$@\" && git checkout -b \"$@\" && git publish; }; f"
+
+	# Checkout branch
+	co = checkout
+
+	# Checkout our version of a file and add it
+	ours = "!f() { git checkout --ours $@ && git add $@; }; f"
+	# Checkout their version of a file and add it
+	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+
+	#List all remotes
 	remotes = remote --verbose
 
 	# List aliases.
-	aliases = config --get-regexp alias
+	la = config --get-regexp alias
 
 	# Amend the currently staged files to the latest commit.
 	amend = commit --amend --reuse-message=HEAD
@@ -69,10 +99,10 @@
 	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 
 	# Merge branches
-	m = "git merge --no-ff"
+	m = "merge --no-ff"
 
 	# Merge abort
-	ma = "git merge --abort"
+	ma = "merge --abort"
 
 	# Remove branches that have already been merged with main.
 	# a.k.a. ‘delete merged’

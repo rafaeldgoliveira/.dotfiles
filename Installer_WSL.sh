@@ -54,7 +54,6 @@ sudo apt-get install -y adoptopenjdk-8-hotspot \
 												fzf \
 												git \
 												git-extras \
-												git-lfs \
 												gradle \
 												grep \
 												htop \
