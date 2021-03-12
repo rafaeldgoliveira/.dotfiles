@@ -100,10 +100,6 @@ echo -e "${GREEN}Instalando e configurando o Micro Editor...${WHITE}"
 cd /usr/local/bin
 sudo curl https://getmic.ro | sudo bash
 
-# NPM packages
-echo -e "${GREEN}Instalando os pacotes NPM...${WHITE}"
-npm install -g npm@7
-
 # Yarn Packages
 echo -e "${GREEN}Instalando os pacotes Yarn...${WHITE}"
 yarn global add @angular/cli react-native-cli cjs-to-es6 create-react-app json-server react react-native @react-native-community/cli diff-so-fancy git-jump expo-cli eslint prettier eslint-config-prettier eslint-plugin-prettier npm-check nodemon local-web-server

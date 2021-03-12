@@ -57,8 +57,8 @@
 10.79.32.11     graylog.estaleiro.serpro
 10.79.32.11     grafana.estaleiro.serpro
 # Added by Docker Desktop
-192.168.0.33 host.docker.internal
-192.168.0.33 gateway.docker.internal
+192.168.1.64 host.docker.internal
+192.168.1.64 gateway.docker.internal
 # To allow the same kube context to work on the host and the container:
 127.0.0.1 kubernetes.docker.internal
 # End of section

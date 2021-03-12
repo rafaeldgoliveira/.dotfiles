@@ -12,6 +12,10 @@ Write-Host ""
 Write-Host "Aperte qualquer tecla para continuar..." -ForegroundColor Green
 $x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
+# Renomeia o computador
+Write-Host "Renomeando o computador para 'Rafael-Windows'" -ForegroundColor Green
+Rename-Computer -NewName "Rafael-Windows"
+
 # Instala o Chocolatey
 Write-Host "Instalando o Chocolatey" -ForegroundColor Green
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -45,6 +49,7 @@ choco install 7zip `
 							firefox `
 							freefilesync `
 							fzf `
+							logitech-options `
 							gamesavemanager `
 							geforce-experience `
 							git `
@@ -185,7 +190,3 @@ New-Item -ItemType SymbolicLink -Path 'D:\OneDrive\Documentos\PowerShell\Microso
 # Yarn Packages
 Write-Host "Instalando os pacotes Yarn..." -ForegroundColor Green
 yarn global add @angular/cli react-native-cli cjs-to-es6 create-react-app json-server react react-native @react-native-community/cli diff-so-fancy git-jump expo-cli eslint prettier eslint-config-prettier eslint-plugin-prettier npm-check nodemon local-web-server
-
-# NPM packages
-Write-Host "Instalando os pacotes NPM..." -ForegroundColor Green
-npm install -g npm@7
