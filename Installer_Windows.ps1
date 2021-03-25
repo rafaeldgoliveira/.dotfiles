@@ -74,7 +74,6 @@ choco install 7zip `
 							mp3gain-gui `
 							mp3tag `
 							nodejs-lts `
-							origin `
 							partitionwizard `
 							picpick.portable `
 							powershell-core `
