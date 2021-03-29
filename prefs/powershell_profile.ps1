@@ -3,6 +3,8 @@ Import-Module oh-my-posh
 
 Set-PoshPrompt -Theme powerlevel10k_lean
 
+New-Alias g git
+
 ## Aliases
 function suu() {Start-Process -Verb RunAs powershell.exe -Args "choco upgrade all -y"}
 
