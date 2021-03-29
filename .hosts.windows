@@ -56,12 +56,6 @@
 10.79.32.60     hub.estaleiro.serpro
 10.79.32.11     graylog.estaleiro.serpro
 10.79.32.11     grafana.estaleiro.serpro
-# Added by Docker Desktop
-192.168.1.64 host.docker.internal
-192.168.1.64 gateway.docker.internal
-# To allow the same kube context to work on the host and the container:
-127.0.0.1 kubernetes.docker.internal
-# End of section
 
 # unchecky_begin
 # These rules were added by the Unchecky program in order to block advertising software modules
@@ -104,3 +98,9 @@
 0.0.0.0 cdn.dpdownload.com
 0.0.0.0 cdn.visualbee.net
 # unchecky_end
+# Added by Docker Desktop
+192.168.1.134 host.docker.internal
+192.168.1.134 gateway.docker.internal
+# To allow the same kube context to work on the host and the container:
+127.0.0.1 kubernetes.docker.internal
+# End of section
