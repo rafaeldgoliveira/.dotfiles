@@ -179,12 +179,13 @@ Set-Alias -Name sudo -Value gsudo
 
 # Oh-My-Posh
 Write-Host "Instalando e configurando o Oh-My-Posh..." -ForegroundColor Green
-Remove-Item 'D:\OneDrive\Documentos\PowerShell\Microsoft.PowerShell_profile.ps1'
-Install-Module oh-my-posh -Scope CurrentUser -AllowPrerelease
-Install-Module posh-git -Scope CurrentUser -AllowPrerelease
-Update-Module oh-my-posh -Scope CurrentUser
-Update-Module posh-git -Scope CurrentUser
-New-Item -ItemType SymbolicLink -Path 'D:\OneDrive\Documentos\PowerShell\Microsoft.PowerShell_profile.ps1' -Target $currentDir'\prefs\powershell_profile.ps1'
+Remove-Item 'D:\OneDrive\Documentos\WindowsPowerShell\Microsoft.PowerShell_profile.ps1' -Force
+Install-Module PowershellGet -Force
+Install-Module oh-my-posh -Scope CurrentUser -AllowPrerelease -Force
+Install-Module posh-git -Scope CurrentUser -AllowPrerelease -Force
+Update-Module oh-my-posh -Scope CurrentUser -Force
+Update-Module posh-git -Scope CurrentUser -Force
+New-Item -ItemType SymbolicLink -Path 'D:\OneDrive\Documentos\WindowsPowerShell\Microsoft.PowerShell_profile.ps1' -Target $currentDir'\prefs\powershell_profile.ps1'
 
 # Yarn Packages
 Write-Host "Instalando os pacotes Yarn..." -ForegroundColor Green
