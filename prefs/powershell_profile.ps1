@@ -10,8 +10,8 @@ New-Alias sudo gsudo
 function suu() {Start-Process -Verb RunAs powershell.exe -Args "choco upgrade all -y"}
 
 function wr {
-  wsl --shutdown
-  Start-Process powershell.exe -Args "wsl"
+  # wsl --shutdown
+  # Start-Process powershell.exe -Args "wsl"
   sudo .\WSL2_Network.ps1
 }
 
