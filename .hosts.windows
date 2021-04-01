@@ -19,14 +19,14 @@
 # localhost name resolution is handled within DNS itself.
 #	127.0.0.1       localhost
 #	::1             localhost
-189.9.113.11 dev.dsgov.estaleiro.serpro.gov.br
-189.9.113.12 dev.dsgov.estaleiro.serpro.gov.br
-189.9.113.13 dev.dsgov.estaleiro.serpro.gov.br
-189.9.113.14 dev.dsgov.estaleiro.serpro.gov.br
-189.9.113.11 hom.dsgov.estaleiro.serpro.gov.br
-189.9.113.12 hom.dsgov.estaleiro.serpro.gov.br
-189.9.113.13 hom.dsgov.estaleiro.serpro.gov.br
-189.9.113.14 hom.dsgov.estaleiro.serpro.gov.br
+189.9.113.11 		dev.dsgov.estaleiro.serpro.gov.br
+189.9.113.12 		dev.dsgov.estaleiro.serpro.gov.br
+189.9.113.13 		dev.dsgov.estaleiro.serpro.gov.br
+189.9.113.14 		dev.dsgov.estaleiro.serpro.gov.br
+189.9.113.11 		hom.dsgov.estaleiro.serpro.gov.br
+189.9.113.12 		hom.dsgov.estaleiro.serpro.gov.br
+189.9.113.13 		hom.dsgov.estaleiro.serpro.gov.br
+189.9.113.14 		hom.dsgov.estaleiro.serpro.gov.br
 10.30.120.19    www.sccd.serpro
 10.30.120.22    www.sccdtk.serpro
 10.30.91.66     siscopweb.serpro
@@ -56,6 +56,11 @@
 10.79.32.60     hub.estaleiro.serpro
 10.79.32.11     graylog.estaleiro.serpro
 10.79.32.11     grafana.estaleiro.serpro
+# End of section
+127.0.0.1                   platform.wondershare.com
+127.0.0.1                   support.wondershare.net
+127.0.0.1                   cbs.wondershare.com
+127.0.0.1                   www.wondershare.net
 
 # unchecky_begin
 # These rules were added by the Unchecky program in order to block advertising software modules
@@ -98,9 +103,3 @@
 0.0.0.0 cdn.dpdownload.com
 0.0.0.0 cdn.visualbee.net
 # unchecky_end
-# Added by Docker Desktop
-192.168.1.134 host.docker.internal
-192.168.1.134 gateway.docker.internal
-# To allow the same kube context to work on the host and the container:
-127.0.0.1 kubernetes.docker.internal
-# End of section

@@ -1,7 +1,7 @@
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,exports,aliases,functions,extra}; do
+for file in ~/.{exports,aliases,functions}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -53,7 +53,7 @@ export UPDATE_ZSH_DAYS=14
 # DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -87,7 +87,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Add wisely, as too many plugins slow down shell startup.
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
-plugins=(adb alias-finder colorize docker docker-compose gitfast npm zsh_reload zsh-autosuggestions zsh-nvm zsh-syntax-highlighting)
+plugins=(adb alias-finder colorize gitfast npm zsh_reload zsh-autosuggestions zsh-nvm zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -124,9 +124,9 @@ export JAVA_HOME
 
 export ANDROID_HOME=$HOME/Android
 export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/cmdline-tools/tools:$PATH
-export PATH=$PATH:$ANDROID_HOME/cmdline-tools/tools/bin:$PATH
-export PATH=$PATH:$ANDROID_HOME/platform-tools:$PATH
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
 export ADB_SERVER_SOCKET=tcp:$WSL_HOST:5037

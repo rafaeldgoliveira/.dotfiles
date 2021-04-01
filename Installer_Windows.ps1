@@ -1,8 +1,14 @@
 #Requires -RunAsAdministrator
 
 Write-Host "Instale os seguintes aplicativos pela Microsoft Store:" -ForegroundColor Green
-Write-Host "	Windows Terminal" -ForegroundColor Yellow
+Write-Host "	Windows Terminal (Abrir antes de continuar)" -ForegroundColor Yellow
 Write-Host "	Seu Telefone" -ForegroundColor Yellow
+Write-Host "	Whatsapp" -ForegroundColor Yellow
+Write-Host "	Telegram" -ForegroundColor Yellow
+Write-Host "	Prime Video" -ForegroundColor Yellow
+Write-Host "	Netflix" -ForegroundColor Yellow
+Write-Host "	Xbox" -ForegroundColor Yellow
+Write-Host "	Procurar 'extens�es' na MS Store" -ForegroundColor Yellow
 $title   = '-----------------------------------------'
 $msg     = 'Já instalou os aplicativos?'
 $options = '&S', '&N'
@@ -23,7 +29,7 @@ function Reload-Profile {
             Write-Verbose "Running $_"
             . $_
         }
-    }    
+    }
 }
 
 # Renomeia o computador
@@ -41,7 +47,7 @@ choco install 7zip `
 					androidstudio `
 					anki `
 					autohotkey `
-					bulkrenameutility`
+					bulkrenameutility `
 					calibre `
 					ccleaner `
 					choco-cleaner `
@@ -58,7 +64,6 @@ choco install 7zip `
 					ffmpeg-batch `
 					firacodenf `
 					firefox `
-					freefilesync `
 					fzf `
 					gamesavemanager `
 					geforce-experience `
@@ -77,15 +82,13 @@ choco install 7zip `
 					linkshellextension `
 					lockhunter `
 					logitech-options `
-					megasync`
+					megasync `
 					mo2 `
 					mp3gain `
 					mp3gain-gui `
 					mp3tag `
 					nodejs-lts `
 					partitionwizard `
-					picpick.portable `
-					powershell-core `
 					powertoys `
 					processhacker `
 					python3 `
@@ -93,7 +96,6 @@ choco install 7zip `
 					reflect-free `
 					remove-empty-directories `
 					revo-uninstaller `
-					samsung-magician`
 					samsung-nvme-driver `
 					samsung-usb-driver `
 					spotify `
@@ -103,11 +105,10 @@ choco install 7zip `
 					throttlestop `
 					transmission `
 					treesizefree `
-					twitch`
+					twitch `
 					unchecky `
 					veracrypt `
 					virtualbox `
-					virtualbox-guest-additions-guest.install `
 					vlc `
 					vscode `
 					whatsapp `
@@ -115,7 +116,7 @@ choco install 7zip `
 					wirelessnetview `
 					xmind `
 					yarn `
-					youtube-dl-gui --ignore-checksums -y 
+					youtube-dl-gui --ignore-checksums -y
 
 [string]$currentDir = Get-Location
 [string]$WTSettings = Resolve-Path ~\AppData\Local\Packages\Microsoft.WindowsTerminalPreview*\LocalState\settings.json
@@ -157,7 +158,7 @@ New-Item -ItemType SymbolicLink -Path $WTSettings -Target $currentDir'\prefs\win
 # Hosts
 Write-Host "Criando o link para o arquivo de hosts..." -ForegroundColor Green
 # Copy-Item $currentDir'\.hosts.windows' -Destination 'C:\Windows\System32\drivers\etc\hosts'
-sudo Remove-Item 'C:\Windows\System32\drivers\etc\hosts' -Recurse -Force
+Remove-Item 'C:\Windows\System32\drivers\etc\hosts' -Recurse -Force
 New-Item -ItemType SymbolicLink -Path 'C:\Windows\System32\drivers\etc\hosts' -Target $currentDir'\.hosts.windows'
 
 # Importa certificados do SERPRO
@@ -189,12 +190,12 @@ New-Item -ItemType SymbolicLink -Path '~\AppData\Roaming\Apple Computer\MobileSy
 
 # Oh-My-Posh
 Write-Host "Instalando e configurando o Oh-My-Posh..." -ForegroundColor Green
-Remove-Item '~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1' -Force
+Remove-Item 'D:\OneDrive\Documentos\WindowsPowerShell\Microsoft.PowerShell_profile.ps1' -Force
 Install-Module PowershellGet -Force
 . Reload-Profile
 Install-Module oh-my-posh -Scope CurrentUser -AllowPrerelease -Force
 Install-Module posh-git -Scope CurrentUser -AllowPrerelease -Force
-New-Item -ItemType SymbolicLink -Path '~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1' -Target $currentDir'\prefs\powershell_profile.ps1'
+New-Item -ItemType SymbolicLink -Path 'D:\OneDrive\Documentos\WindowsPowerShell\Microsoft.PowerShell_profile.ps1' -Target $currentDir'\prefs\powershell_profile.ps1'
 
 # Yarn Packages
 Write-Host "Instalando os pacotes Yarn..." -ForegroundColor Green
@@ -223,9 +224,7 @@ $exeApplications = @(
 'Bloody7',
 'Caption',
 'DeviceRemover',
-'Discord Better App',
-'Easy Window Switcher',
-'intelhaxm-android',
+'BetterDiscord',
 'iTunes',
 'Kaspersky Total Security',
 'MSI_Kombustor4',
@@ -235,6 +234,9 @@ $exeApplications = @(
 'RTSS',
 'SamsungDeX',
 'SmartSwitchPC',
+'FreeFileSync',
+'VdhCoApp',
+'Samsung_Magician',
 'TeraCopy Pro 3.6.0.4\TeraCopy Pro 3.6.0.4',
 'Wondershare PDFelement Professional v7.6.8.5031\pdfelement-pro_full5239',
 'G5 5590\Alienware-Command-Center-Application_J4MMM_WIN_5.2.106.0_A00_01',
@@ -256,3 +258,4 @@ ForEach ($item in $msiApplications) {
 	Start-Process "D:\Mega\Aplicativos Windows\$item.msi" -Wait -Verb runas
 }
 
+Start-Process "D:\Mega\Aplicativos Windows\Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack" -Wait -Verb runas
