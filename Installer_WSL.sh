@@ -53,6 +53,7 @@ sudo apt-get install -y adoptopenjdk-8-hotspot \
 												htop \
 												lib32z1 \
 												libssl-dev \
+												pandoc \
 												moreutils \
 												net-tools \
 												nmap \
@@ -222,4 +223,4 @@ ln -s $scriptDir/.yarnrc $HOME/.yarnrc
 ln -s $scriptDir/.zshrc $HOME/.zshrc
 
 # echo -e "${GREEN}Definindo o ZSH como padrão...${WHITE}"
-# sudo sh -c "echo -e $(which zsh) >> /etc/shells" && chsh -s $(which zsh)
+sudo sh -c "echo -e $(which zsh) >> /etc/shells" && chsh -s $(which zsh)

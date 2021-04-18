@@ -6,6 +6,7 @@ Write-Host "	Seu Telefone" -ForegroundColor Yellow
 Write-Host "	Whatsapp" -ForegroundColor Yellow
 Write-Host "	Telegram" -ForegroundColor Yellow
 Write-Host "	Prime Video" -ForegroundColor Yellow
+Write-Host "	Bluetooth Audio Receiver" -ForegroundColor Yellow
 Write-Host "	Netflix" -ForegroundColor Yellow
 Write-Host "	Xbox" -ForegroundColor Yellow
 Write-Host "	Procurar 'extens�es' na MS Store" -ForegroundColor Yellow
@@ -57,10 +58,14 @@ choco install 7zip `
 					crystaldiskmark `
 					ddu `
 					discord `
+					screentogif `
+					docker-desktop `
+					docker-compose `
 					dropbox `
 					ds4windows `
 					epicgameslauncher `
 					evernote `
+					pandoc `
 					ffmpeg-batch `
 					firacodenf `
 					firefox `
@@ -93,6 +98,7 @@ choco install 7zip `
 					processhacker `
 					python3 `
 					recuva `
+					batteryinfoview `
 					reflect-free `
 					remove-empty-directories `
 					revo-uninstaller `
@@ -234,6 +240,7 @@ $exeApplications = @(
 'RTSS',
 'SamsungDeX',
 'SmartSwitchPC',
+'WeMod',
 'FreeFileSync',
 'VdhCoApp',
 'Samsung_Magician',

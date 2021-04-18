@@ -5,6 +5,7 @@ Set-PoshPrompt -Theme powerlevel10k_lean
 
 ## Aliases
 New-Alias g git
+New-Alias cc clear
 New-Alias sudo gsudo
 
 function suu() {Start-Process -Verb RunAs powershell.exe -Args "choco upgrade all -y"}

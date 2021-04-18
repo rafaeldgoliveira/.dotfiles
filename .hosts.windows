@@ -56,11 +56,16 @@
 10.79.32.60     hub.estaleiro.serpro
 10.79.32.11     graylog.estaleiro.serpro
 10.79.32.11     grafana.estaleiro.serpro
-# End of section
 127.0.0.1                   platform.wondershare.com
 127.0.0.1                   support.wondershare.net
 127.0.0.1                   cbs.wondershare.com
 127.0.0.1                   www.wondershare.net
+# Added by Docker Desktop
+192.168.1.64 host.docker.internal
+192.168.1.64 gateway.docker.internal
+# To allow the same kube context to work on the host and the container:
+127.0.0.1 kubernetes.docker.internal
+# End of section
 
 # unchecky_begin
 # These rules were added by the Unchecky program in order to block advertising software modules

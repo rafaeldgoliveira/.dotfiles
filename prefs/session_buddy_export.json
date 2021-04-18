@@ -1,48 +1,47 @@
 ﻿﻿{
-   "sessions": [
+   "windows": [
       {
-         "type": "saved",
-         "name": "SERPRO",
-         "generated": "1970-01-01T00:00:00.000Z",
-         "created": "2021-02-06T15:48:43.982Z",
-         "modified": "2021-02-06T15:48:43.982Z",
-         "id": 18,
-         "gid": "0nlExNdHDaAfJBIbhll7KUOAtqmgdvhs",
+         "alwaysOnTop": false,
+         "focused": false,
+         "height": 1056,
+         "id": 61,
+         "incognito": false,
+         "left": -8,
+         "state": "maximized",
          "tabs": [
             {
                "active": false,
                "audible": false,
                "autoDiscardable": true,
                "discarded": false,
-               "favIconUrl": "https://mail.serpro.gov.br/img/logo/favicon.ico",
+               "favIconUrl": "https://mail.serpro.gov.br/img/logo/favicon_1.ico",
                "groupId": -1,
                "height": 937,
                "highlighted": false,
-               "id": 213,
+               "id": 62,
                "incognito": false,
                "index": 0,
                "mutedInfo": {
-                  "muted": true,
-                  "reason": "user"
+                  "muted": false
                },
                "pinned": false,
                "selected": false,
                "status": "complete",
-               "title": "SerproMail: Entrada",
+               "title": "SerproMail: Entrada (1)",
                "url": "https://mail.serpro.gov.br/?client=advanced#1",
                "width": 1920,
-               "windowId": 143
+               "windowId": 61
             },
             {
                "active": true,
                "audible": false,
                "autoDiscardable": true,
                "discarded": false,
-               "favIconUrl": "https://ow2.res.office365.com/todo/324655_2.36.5/favicon.ico",
+               "favIconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFJElEQVRYR9WXa0wUVxTHz53Z2WWX5b0UKdgFhYCtGrRglVZtbYuSYOsj4KOJxkYxbdM0NU3TpElDmjRpP9Q2ITU+Yqu2UguK+KqPBkVoACM+FqFdKiBvwX0N7Gtmd2duMySz7AtnsB9M9+O9557z+//nnjOzCJ7yDz3l+iAJcOBAOaXXb1r00O6bI8Kmxih6dbrujvz83a7/KmBagLa2A5qekfTdHKHeSZCEniRIjViM53ngOH5ARXgP3zPSP1TsKbM+KUhEgGPHTszTzko9ymEiXyoxz/H9hNP2Tmnpumap2Ej7YQBCcVVy6nWCIHRyE3I859IiR3HJmpImuWfEuCAAwfYBa25DqHIS4UbGPlHn4bFVSWAlC+rX1Brq7aDHwvH92bHsy4tfKRqZCUQQwG9nL3xMqGK/FRMIyuJIzw47fai2rKyGE9erq0tJC7tteaIutjrQKQXv/XrdmlWfIwRYLoQfQLjtMWmb71IUNU88rEXuTcVFRTXTJaupqSvktPFXRCd4njcv1Xbm6Je/b5sxwKVL9UtoTF4Vkwm2++jK1wOVhybFGNCJc1d+VKjU28W9cQu9YefWtXUzBvip5vJmbaymSjzodYzv2bqx5HupREeqzm6MTkrwu+RyuT7avn51pdS5sEt45OTFLdEx2uPihoOmN+zYJK3kwunTeS6N7rZ47okBQh2gx2xv7Nr21lUpJUOGX9JbRvUD/28A86EVq5SJ8V+41VErRSXJnr67QBHSs97La0zKjDzxnNrpaFdG489UxRcvyWlHRP9c9Gac2nIGANRSdgfuYyAxAm66d4nb5VV+GL2l5XBozmsVFQoHgNJ/CXFtvgF4vFBucRcTjU8OZ6M7lhTIVtkgY5YDLyBHkC6ZwWrMTAEpyH9u1CcVLK28OCHmXlterum90XaeIKlXpwBOvihragmKm816dP5BBlh5/4vRzx2vYEGvGIes1AmcSVpQus6Ou/6g5iza39AnBuUVFO5iWeZgoFiEZQBY2Xj862AOarckyzUKBCCbJ+oyRZItbi9u8DnND+7cbK3nOF+WbABBdeOD59AZaw44fQrZxcMDMWsaHgBjR7sqdG9aBwZdCbiqawHq9cQ+tnAKaYeFaWawuzVwy6QDL5Bh8ZjzwZ0bTeC0O8L2wgDcjAp+H3sBXxtNQZGSBWZYmGSCd7Nvgxp7J5c73Kmwvz0vDMI0MgDGe4aIQiICPGQSZdmdGmUFdRQbFLvPsAQMzDP+NUF9e1szTNDj8gCEKA5UsjqDBDZsDhzsKIRbzikBk/a3XAenM/JMC3PAxsRA9f3nweiOl3RhWdJDXDq3E8SBZGGS8FedBSj0wo7298B941/yHZjs+cFMdOpRluTtL0gYhvyER/gRjoHG4dnI5Am76OBhXWBo/RMYJvhxCUSPnQNC/9f2Z6KbtjRJN6QCBnv+hr7ubukuCI0Q3Oi0zkLVvVkwxsVI1QnZxyaEqJuI8zQNDw3W9xjb6zCGZ2UPosBAoT3PDefgRnNaxPakgINohQ+yFML7gYZc0gx0V9Tc2riCvoqKCl7Ilbc4/1PWx38TBMCfesmEsE/2f4Budwo+bpyPRjzqyXGbTjkgN8UEGYpxSNfR/pkAgCx9Y0vmZ36wb1QsWLp6WWKXmTd4vd50cQ0x51e+p2Ic+2birRtRYLPFQUKCI/gNGJDES1B7qfWtn4R+ExStWDF7aGIiyQ8gfI5vT+vaqWSZL2fixPTAyMJEJX5nTlyzd3bhHreUsH8B/6NnMiI/c1cAAAAASUVORK5CYII=",
                "groupId": -1,
-               "height": 722,
+               "height": 937,
                "highlighted": true,
-               "id": 365,
+               "id": 69,
                "incognito": false,
                "index": 1,
                "mutedInfo": {
@@ -51,10 +50,10 @@
                "pinned": false,
                "selected": true,
                "status": "complete",
-               "title": "SERPRO - To Do",
-               "url": "https://to-do.live.com/tasks/AQMkADAwATMwMAItODRiOC04OAAzNS0wMAItMDAKAC4AAAO5G1fYQ_uuSqjwBWDc6v9-AQATcPS7H4JnQ7pTsONNDaaeAAPt7GQjAAAA",
-               "width": 1536,
-               "windowId": 143
+               "title": "Home",
+               "url": "https://www.notion.so/Home-670fe4ba0ee6441ca3b7e5b1f6485f84",
+               "width": 1920,
+               "windowId": 61
             },
             {
                "active": false,
@@ -63,9 +62,9 @@
                "discarded": false,
                "favIconUrl": "https://web.whatsapp.com/img/favicon_c5088e888c97ad440a61d247596f88e5.png",
                "groupId": -1,
-               "height": 937,
+               "height": 562,
                "highlighted": false,
-               "id": 273,
+               "id": 70,
                "incognito": false,
                "index": 2,
                "mutedInfo": {
@@ -76,271 +75,22 @@
                "status": "complete",
                "title": "WhatsApp",
                "url": "https://web.whatsapp.com/",
-               "width": 1920,
-               "windowId": 143
+               "width": 1228,
+               "windowId": 61
             }
-         ]
+         ],
+         "top": -8,
+         "type": "normal",
+         "width": 1936
       },
       {
-         "type": "saved",
-         "name": "Concursos",
-         "generated": "1970-01-01T00:00:00.000Z",
-         "created": "2021-02-06T15:48:39.374Z",
-         "modified": "2021-02-06T15:48:39.374Z",
-         "id": 17,
-         "gid": "AH0N1F1VnAslaY2bNYsuDBgmxQAxwveH",
-         "tabs": [
-            {
-               "active": false,
-               "audible": false,
-               "autoDiscardable": true,
-               "discarded": false,
-               "favIconUrl": "https://ssl.gstatic.com/docs/spreadsheets/favicon3.ico",
-               "groupId": -1,
-               "height": 937,
-               "highlighted": false,
-               "id": 282,
-               "incognito": false,
-               "index": 0,
-               "mutedInfo": {
-                  "muted": false
-               },
-               "pinned": false,
-               "selected": false,
-               "status": "complete",
-               "title": "📚TImasters - Concursos de TI - Planilhas Google",
-               "url": "https://docs.google.com/spreadsheets/d/1ivIOl8DF87j75NSOIxuIi4e6qjEwV2o-cCv9Nn72zuI/edit?buffer_share=90f33#gid=1696756210",
-               "width": 1920,
-               "windowId": 141
-            },
-            {
-               "active": false,
-               "audible": false,
-               "autoDiscardable": true,
-               "discarded": false,
-               "favIconUrl": "https://ssl.gstatic.com/docs/spreadsheets/favicon3.ico",
-               "groupId": -1,
-               "height": 937,
-               "highlighted": false,
-               "id": 285,
-               "incognito": false,
-               "index": 1,
-               "mutedInfo": {
-                  "muted": false
-               },
-               "pinned": false,
-               "selected": false,
-               "status": "complete",
-               "title": "Controle de Estudos - Planilhas Google",
-               "url": "https://docs.google.com/spreadsheets/d/1u675Xm-Z7AmAElsP14Z9KH3YrMpy6zuXZbTWMRuqot4/edit#gid=0",
-               "width": 1920,
-               "windowId": 141
-            },
-            {
-               "active": false,
-               "audible": false,
-               "autoDiscardable": true,
-               "discarded": false,
-               "favIconUrl": "https://ow2.res.office365.com/todo/324655_2.36.5/favicon.ico",
-               "groupId": -1,
-               "height": 937,
-               "highlighted": false,
-               "id": 288,
-               "incognito": false,
-               "index": 2,
-               "mutedInfo": {
-                  "muted": false
-               },
-               "pinned": false,
-               "selected": false,
-               "status": "complete",
-               "title": "Estudo - To Do",
-               "url": "https://to-do.live.com/tasks/AQMkADAwATMwMAItODRiOC04OAAzNS0wMAItMDAKAC4AAAO5G1fYQ_uuSqjwBWDc6v9-AQATcPS7H4JnQ7pTsONNDaaeAAPt7GQkAAAA",
-               "width": 1920,
-               "windowId": 141
-            },
-            {
-               "active": false,
-               "audible": false,
-               "autoDiscardable": true,
-               "discarded": false,
-               "favIconUrl": "https://ankiweb.net/favicon.ico",
-               "groupId": -1,
-               "height": 937,
-               "highlighted": false,
-               "id": 331,
-               "incognito": false,
-               "index": 3,
-               "mutedInfo": {
-                  "muted": false
-               },
-               "pinned": false,
-               "selected": false,
-               "status": "complete",
-               "title": "Decks - AnkiWeb",
-               "url": "https://ankiweb.net/decks/",
-               "width": 1920,
-               "windowId": 141
-            },
-            {
-               "active": false,
-               "audible": false,
-               "autoDiscardable": true,
-               "discarded": false,
-               "favIconUrl": "https://www.qconcursos.com/favicon.ico",
-               "groupId": -1,
-               "height": 937,
-               "highlighted": false,
-               "id": 328,
-               "incognito": false,
-               "index": 4,
-               "mutedInfo": {
-                  "muted": false
-               },
-               "pinned": false,
-               "selected": false,
-               "status": "complete",
-               "title": "Questões de Concursos - Provas, Aulas e Questões | Qconcursos.com",
-               "url": "https://www.qconcursos.com/usuario",
-               "width": 1920,
-               "windowId": 141
-            },
-            {
-               "active": true,
-               "audible": false,
-               "autoDiscardable": true,
-               "discarded": false,
-               "favIconUrl": "https://c5.patreon.com/external/favicon/favicon.ico?v=69kMELnXkB",
-               "groupId": -1,
-               "height": 722,
-               "highlighted": true,
-               "id": 368,
-               "incognito": false,
-               "index": 5,
-               "mutedInfo": {
-                  "muted": false
-               },
-               "pinned": false,
-               "selected": true,
-               "status": "complete",
-               "title": "TImasters is creating Orientação e Material para Concursos Públicos de TI | Patreon",
-               "url": "https://www.patreon.com/timasters",
-               "width": 1536,
-               "windowId": 141
-            }
-         ]
-      },
-      {
-         "type": "saved",
-         "name": "Estudo",
-         "generated": "1970-01-01T00:00:00.000Z",
-         "created": "2021-02-06T15:48:34.385Z",
-         "modified": "2021-02-06T15:48:34.385Z",
-         "id": 16,
-         "gid": "KYE4s7GKxUQCoYnQdkVAAlhx0XbdQFjV",
-         "tabs": [
-            {
-               "active": false,
-               "audible": false,
-               "autoDiscardable": true,
-               "discarded": false,
-               "favIconUrl": "https://ow2.res.office365.com/todo/324655_2.36.5/favicon.ico",
-               "groupId": -1,
-               "height": 722,
-               "highlighted": false,
-               "id": 314,
-               "incognito": false,
-               "index": 0,
-               "mutedInfo": {
-                  "muted": false
-               },
-               "pinned": false,
-               "selected": false,
-               "status": "complete",
-               "title": "CP - To Do",
-               "url": "https://to-do.live.com/tasks/AQMkADAwATMwMAItODRiOC04OAAzNS0wMAItMDAKAC4AAAO5G1fYQ_uuSqjwBWDc6v9-AQATcPS7H4JnQ7pTsONNDaaeAAPt7GQpAAAA",
-               "width": 1536,
-               "windowId": 139
-            },
-            {
-               "active": false,
-               "audible": false,
-               "autoDiscardable": true,
-               "discarded": false,
-               "favIconUrl": "https://github.githubassets.com/favicons/favicon-dark.svg",
-               "groupId": -1,
-               "height": 722,
-               "highlighted": false,
-               "id": 325,
-               "incognito": false,
-               "index": 1,
-               "mutedInfo": {
-                  "muted": false
-               },
-               "pinned": false,
-               "selected": false,
-               "status": "complete",
-               "title": "GitHub",
-               "url": "https://github.com/",
-               "width": 1536,
-               "windowId": 139
-            },
-            {
-               "active": true,
-               "audible": false,
-               "autoDiscardable": true,
-               "discarded": false,
-               "favIconUrl": "https://www.udemy.com/staticx/udemy/images/v6/favicon-32x32.png",
-               "groupId": -1,
-               "height": 722,
-               "highlighted": true,
-               "id": 322,
-               "incognito": false,
-               "index": 2,
-               "mutedInfo": {
-                  "muted": false
-               },
-               "pinned": false,
-               "selected": true,
-               "status": "complete",
-               "title": "Cursos online - a qualquer hora, em qualquer lugar | Udemy",
-               "url": "https://www.udemy.com/home/my-courses/learning/",
-               "width": 1536,
-               "windowId": 139
-            },
-            {
-               "active": false,
-               "audible": false,
-               "autoDiscardable": true,
-               "discarded": false,
-               "favIconUrl": "https://uxdesignmasterclass.com/wp-content/uploads/2017/11/ux-favicon.png",
-               "groupId": -1,
-               "height": 722,
-               "highlighted": false,
-               "id": 385,
-               "incognito": false,
-               "index": 3,
-               "mutedInfo": {
-                  "muted": false
-               },
-               "pinned": false,
-               "selected": false,
-               "status": "complete",
-               "title": "Welcome | UX Design Masterclass",
-               "url": "https://uxdesignmasterclass.com/welcome",
-               "width": 1536,
-               "windowId": 139
-            }
-         ]
-      },
-      {
-         "type": "saved",
-         "name": "Diversos",
-         "generated": "1970-01-01T00:00:00.000Z",
-         "created": "2021-02-06T15:48:26.042Z",
-         "modified": "2021-02-06T15:48:26.042Z",
-         "id": 15,
-         "gid": "UyrCNiCixobKEgQaeQcUHCtKzqgaCdzB",
+         "alwaysOnTop": false,
+         "focused": false,
+         "height": 1056,
+         "id": 67,
+         "incognito": false,
+         "left": -8,
+         "state": "maximized",
          "tabs": [
             {
                "active": false,
@@ -351,7 +101,7 @@
                "groupId": -1,
                "height": 937,
                "highlighted": false,
-               "id": 382,
+               "id": 68,
                "incognito": false,
                "index": 0,
                "mutedInfo": {
@@ -363,53 +113,30 @@
                "title": "Caixa de entrada - rafadiego.gomes@gmail.com - Gmail",
                "url": "https://mail.google.com/mail/u/0/#inbox",
                "width": 1920,
-               "windowId": 137
+               "windowId": 67
             },
             {
-               "active": false,
+               "active": true,
                "audible": false,
                "autoDiscardable": true,
                "discarded": false,
-               "favIconUrl": "https://ow2.res.office365.com/todo/324655_2.36.5/favicon.ico",
+               "favIconUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFJElEQVRYR9WXa0wUVxTHz53Z2WWX5b0UKdgFhYCtGrRglVZtbYuSYOsj4KOJxkYxbdM0NU3TpElDmjRpP9Q2ITU+Yqu2UguK+KqPBkVoACM+FqFdKiBvwX0N7Gtmd2duMySz7AtnsB9M9+O9557z+//nnjOzCJ7yDz3l+iAJcOBAOaXXb1r00O6bI8Kmxih6dbrujvz83a7/KmBagLa2A5qekfTdHKHeSZCEniRIjViM53ngOH5ARXgP3zPSP1TsKbM+KUhEgGPHTszTzko9ymEiXyoxz/H9hNP2Tmnpumap2Ej7YQBCcVVy6nWCIHRyE3I859IiR3HJmpImuWfEuCAAwfYBa25DqHIS4UbGPlHn4bFVSWAlC+rX1Brq7aDHwvH92bHsy4tfKRqZCUQQwG9nL3xMqGK/FRMIyuJIzw47fai2rKyGE9erq0tJC7tteaIutjrQKQXv/XrdmlWfIwRYLoQfQLjtMWmb71IUNU88rEXuTcVFRTXTJaupqSvktPFXRCd4njcv1Xbm6Je/b5sxwKVL9UtoTF4Vkwm2++jK1wOVhybFGNCJc1d+VKjU28W9cQu9YefWtXUzBvip5vJmbaymSjzodYzv2bqx5HupREeqzm6MTkrwu+RyuT7avn51pdS5sEt45OTFLdEx2uPihoOmN+zYJK3kwunTeS6N7rZ47okBQh2gx2xv7Nr21lUpJUOGX9JbRvUD/28A86EVq5SJ8V+41VErRSXJnr67QBHSs97La0zKjDzxnNrpaFdG489UxRcvyWlHRP9c9Gac2nIGANRSdgfuYyAxAm66d4nb5VV+GL2l5XBozmsVFQoHgNJ/CXFtvgF4vFBucRcTjU8OZ6M7lhTIVtkgY5YDLyBHkC6ZwWrMTAEpyH9u1CcVLK28OCHmXlterum90XaeIKlXpwBOvihragmKm816dP5BBlh5/4vRzx2vYEGvGIes1AmcSVpQus6Ou/6g5iza39AnBuUVFO5iWeZgoFiEZQBY2Xj862AOarckyzUKBCCbJ+oyRZItbi9u8DnND+7cbK3nOF+WbABBdeOD59AZaw44fQrZxcMDMWsaHgBjR7sqdG9aBwZdCbiqawHq9cQ+tnAKaYeFaWawuzVwy6QDL5Bh8ZjzwZ0bTeC0O8L2wgDcjAp+H3sBXxtNQZGSBWZYmGSCd7Nvgxp7J5c73Kmwvz0vDMI0MgDGe4aIQiICPGQSZdmdGmUFdRQbFLvPsAQMzDP+NUF9e1szTNDj8gCEKA5UsjqDBDZsDhzsKIRbzikBk/a3XAenM/JMC3PAxsRA9f3nweiOl3RhWdJDXDq3E8SBZGGS8FedBSj0wo7298B941/yHZjs+cFMdOpRluTtL0gYhvyER/gRjoHG4dnI5Am76OBhXWBo/RMYJvhxCUSPnQNC/9f2Z6KbtjRJN6QCBnv+hr7ubukuCI0Q3Oi0zkLVvVkwxsVI1QnZxyaEqJuI8zQNDw3W9xjb6zCGZ2UPosBAoT3PDefgRnNaxPakgINohQ+yFML7gYZc0gx0V9Tc2riCvoqKCl7Ilbc4/1PWx38TBMCfesmEsE/2f4Budwo+bpyPRjzqyXGbTjkgN8UEGYpxSNfR/pkAgCx9Y0vmZ36wb1QsWLp6WWKXmTd4vd50cQ0x51e+p2Ic+2birRtRYLPFQUKCI/gNGJDES1B7qfWtn4R+ExStWDF7aGIiyQ8gfI5vT+vaqWSZL2fixPTAyMJEJX5nTlyzd3bhHreUsH8B/6NnMiI/c1cAAAAASUVORK5CYII=",
                "groupId": -1,
                "height": 937,
-               "highlighted": false,
-               "id": 376,
+               "highlighted": true,
+               "id": 79,
                "incognito": false,
                "index": 1,
                "mutedInfo": {
                   "muted": false
                },
                "pinned": false,
-               "selected": false,
+               "selected": true,
                "status": "complete",
-               "title": "Geral - To Do",
-               "url": "https://to-do.live.com/tasks/AQMkADAwATMwMAItODRiOC04OAAzNS0wMAItMDAKAC4AAAO5G1fYQ_uuSqjwBWDc6v9-AQATcPS7H4JnQ7pTsONNDaaeAAPt7GQeAAAA",
+               "title": "Home",
+               "url": "https://www.notion.so/Home-670fe4ba0ee6441ca3b7e5b1f6485f84",
                "width": 1920,
-               "windowId": 137
-            },
-            {
-               "active": false,
-               "audible": false,
-               "autoDiscardable": true,
-               "discarded": false,
-               "favIconUrl": "https://ow2.res.office365.com/todo/324655_2.36.5/favicon.ico",
-               "groupId": -1,
-               "height": 937,
-               "highlighted": false,
-               "id": 379,
-               "incognito": false,
-               "index": 2,
-               "mutedInfo": {
-                  "muted": false
-               },
-               "pinned": false,
-               "selected": false,
-               "status": "complete",
-               "title": "Metas Diárias - To Do",
-               "url": "https://to-do.live.com/tasks/AQMkADAwATMwMAItODRiOC04OAAzNS0wMAItMDAKAC4AAAO5G1fYQ_uuSqjwBWDc6v9-AQATcPS7H4JnQ7pTsONNDaaeAAPt7GQgAAAA",
-               "width": 1920,
-               "windowId": 137
+               "windowId": 67
             },
             {
                "active": false,
@@ -420,9 +147,9 @@
                "groupId": -1,
                "height": 937,
                "highlighted": false,
-               "id": 246,
+               "id": 81,
                "incognito": false,
-               "index": 3,
+               "index": 2,
                "mutedInfo": {
                   "muted": false
                },
@@ -432,7 +159,7 @@
                "title": "Instapaper",
                "url": "https://www.instapaper.com/u",
                "width": 1920,
-               "windowId": 137
+               "windowId": 67
             },
             {
                "active": false,
@@ -441,11 +168,11 @@
                "discarded": false,
                "favIconUrl": "https://feedly.com/favicon.ico",
                "groupId": -1,
-               "height": 937,
+               "height": 562,
                "highlighted": false,
-               "id": 249,
+               "id": 82,
                "incognito": false,
-               "index": 4,
+               "index": 3,
                "mutedInfo": {
                   "muted": false
                },
@@ -454,21 +181,21 @@
                "status": "complete",
                "title": "All Personal Feeds",
                "url": "https://feedly.com/i/collection/content/user/75a4877e-24f8-471c-aa27-a8a6ce9b0673/category/global.all",
-               "width": 1920,
-               "windowId": 137
+               "width": 1228,
+               "windowId": 67
             },
             {
                "active": false,
                "audible": false,
                "autoDiscardable": true,
                "discarded": false,
-               "favIconUrl": "https://www.youtube.com/s/desktop/b9a7b031/img/favicon_32.png",
+               "favIconUrl": "https://www.youtube.com/s/desktop/9528aa7e/img/favicon_32.png",
                "groupId": -1,
-               "height": 937,
+               "height": 562,
                "highlighted": false,
-               "id": 343,
+               "id": 83,
                "incognito": false,
-               "index": 5,
+               "index": 4,
                "mutedInfo": {
                   "muted": false
                },
@@ -477,10 +204,271 @@
                "status": "complete",
                "title": "YouTube",
                "url": "https://www.youtube.com/",
-               "width": 1920,
-               "windowId": 137
+               "width": 1228,
+               "windowId": 67
             }
-         ]
+         ],
+         "top": -8,
+         "type": "normal",
+         "width": 1936
+      },
+      {
+         "alwaysOnTop": false,
+         "focused": false,
+         "height": 1056,
+         "id": 65,
+         "incognito": false,
+         "left": -8,
+         "state": "maximized",
+         "tabs": [
+            {
+               "active": true,
+               "audible": false,
+               "autoDiscardable": true,
+               "discarded": false,
+               "favIconUrl": "https://www.notion.so/images/favicon.ico",
+               "groupId": -1,
+               "height": 937,
+               "highlighted": true,
+               "id": 66,
+               "incognito": false,
+               "index": 0,
+               "mutedInfo": {
+                  "muted": false
+               },
+               "pinned": false,
+               "selected": true,
+               "status": "complete",
+               "title": "Desenvolvimento",
+               "url": "https://www.notion.so/Desenvolvimento-ca583642aefb4130bb5eba16e4e16e00",
+               "width": 1920,
+               "windowId": 65
+            },
+            {
+               "active": false,
+               "audible": false,
+               "autoDiscardable": true,
+               "discarded": false,
+               "favIconUrl": "https://github.githubassets.com/favicons/favicon-dark.svg",
+               "groupId": -1,
+               "height": 562,
+               "highlighted": false,
+               "id": 76,
+               "incognito": false,
+               "index": 1,
+               "mutedInfo": {
+                  "muted": false
+               },
+               "pinned": false,
+               "selected": false,
+               "status": "complete",
+               "title": "GitHub",
+               "url": "https://github.com/",
+               "width": 1228,
+               "windowId": 65
+            },
+            {
+               "active": false,
+               "audible": false,
+               "autoDiscardable": true,
+               "discarded": false,
+               "favIconUrl": "https://www.udemy.com/staticx/udemy/images/v6/favicon-32x32.png",
+               "groupId": -1,
+               "height": 562,
+               "highlighted": false,
+               "id": 77,
+               "incognito": false,
+               "index": 2,
+               "mutedInfo": {
+                  "muted": false
+               },
+               "pinned": false,
+               "selected": false,
+               "status": "complete",
+               "title": "Cursos online - a qualquer hora, em qualquer lugar | Udemy",
+               "url": "https://www.udemy.com/home/my-courses/learning/",
+               "width": 1228,
+               "windowId": 65
+            },
+            {
+               "active": false,
+               "audible": false,
+               "autoDiscardable": true,
+               "discarded": false,
+               "favIconUrl": "https://uxdesignmasterclass.com/wp-content/uploads/2017/11/ux-favicon.png",
+               "groupId": -1,
+               "height": 562,
+               "highlighted": false,
+               "id": 78,
+               "incognito": false,
+               "index": 3,
+               "mutedInfo": {
+                  "muted": false
+               },
+               "pinned": false,
+               "selected": false,
+               "status": "complete",
+               "title": "Welcome | UX Design Masterclass",
+               "url": "https://uxdesignmasterclass.com/welcome",
+               "width": 1228,
+               "windowId": 65
+            }
+         ],
+         "top": -8,
+         "type": "normal",
+         "width": 1936
+      },
+      {
+         "alwaysOnTop": false,
+         "focused": true,
+         "height": 1056,
+         "id": 63,
+         "incognito": false,
+         "left": -8,
+         "state": "maximized",
+         "tabs": [
+            {
+               "active": false,
+               "audible": false,
+               "autoDiscardable": true,
+               "discarded": false,
+               "favIconUrl": "https://ssl.gstatic.com/docs/spreadsheets/favicon3.ico",
+               "groupId": -1,
+               "height": 937,
+               "highlighted": false,
+               "id": 64,
+               "incognito": false,
+               "index": 0,
+               "mutedInfo": {
+                  "muted": false
+               },
+               "pinned": false,
+               "selected": false,
+               "status": "complete",
+               "title": "📚TImasters - Concursos de TI - Planilhas Google",
+               "url": "https://docs.google.com/spreadsheets/d/1ivIOl8DF87j75NSOIxuIi4e6qjEwV2o-cCv9Nn72zuI/edit?buffer_share=90f33#gid=1696756210",
+               "width": 1920,
+               "windowId": 63
+            },
+            {
+               "active": false,
+               "audible": false,
+               "autoDiscardable": true,
+               "discarded": false,
+               "favIconUrl": "https://ssl.gstatic.com/docs/spreadsheets/favicon3.ico",
+               "groupId": -1,
+               "height": 562,
+               "highlighted": false,
+               "id": 71,
+               "incognito": false,
+               "index": 1,
+               "mutedInfo": {
+                  "muted": false
+               },
+               "pinned": false,
+               "selected": false,
+               "status": "complete",
+               "title": "Controle de Estudos - Planilhas Google",
+               "url": "https://docs.google.com/spreadsheets/d/1u675Xm-Z7AmAElsP14Z9KH3YrMpy6zuXZbTWMRuqot4/edit#gid=0",
+               "width": 1228,
+               "windowId": 63
+            },
+            {
+               "active": false,
+               "audible": false,
+               "autoDiscardable": true,
+               "discarded": false,
+               "favIconUrl": "https://www.notion.so/images/favicon.ico",
+               "groupId": -1,
+               "height": 937,
+               "highlighted": false,
+               "id": 72,
+               "incognito": false,
+               "index": 2,
+               "mutedInfo": {
+                  "muted": false
+               },
+               "pinned": false,
+               "selected": false,
+               "status": "complete",
+               "title": "Concursos",
+               "url": "https://www.notion.so/Concursos-d2175a1895804114a2a8582c2618a292",
+               "width": 1920,
+               "windowId": 63
+            },
+            {
+               "active": false,
+               "audible": false,
+               "autoDiscardable": true,
+               "discarded": false,
+               "favIconUrl": "https://ankiweb.net/favicon.ico",
+               "groupId": -1,
+               "height": 562,
+               "highlighted": false,
+               "id": 73,
+               "incognito": false,
+               "index": 3,
+               "mutedInfo": {
+                  "muted": false
+               },
+               "pinned": false,
+               "selected": false,
+               "status": "complete",
+               "title": "Decks - AnkiWeb",
+               "url": "https://ankiweb.net/decks/",
+               "width": 1228,
+               "windowId": 63
+            },
+            {
+               "active": false,
+               "audible": false,
+               "autoDiscardable": true,
+               "discarded": false,
+               "favIconUrl": "https://www.qconcursos.com/favicon.ico",
+               "groupId": -1,
+               "height": 562,
+               "highlighted": false,
+               "id": 74,
+               "incognito": false,
+               "index": 4,
+               "mutedInfo": {
+                  "muted": false
+               },
+               "pinned": false,
+               "selected": false,
+               "status": "complete",
+               "title": "Questões de Concursos - Provas, Aulas e Questões | Qconcursos.com",
+               "url": "https://www.qconcursos.com/usuario",
+               "width": 1228,
+               "windowId": 63
+            },
+            {
+               "active": false,
+               "audible": false,
+               "autoDiscardable": true,
+               "discarded": false,
+               "favIconUrl": "https://c5.patreon.com/external/favicon/favicon.ico?v=69kMELnXkB",
+               "groupId": -1,
+               "height": 562,
+               "highlighted": false,
+               "id": 75,
+               "incognito": false,
+               "index": 5,
+               "mutedInfo": {
+                  "muted": false
+               },
+               "pinned": false,
+               "selected": false,
+               "status": "complete",
+               "title": "TImasters is creating Aprovados em Concursos Públicos de TI | Patreon",
+               "url": "https://www.patreon.com/timasters",
+               "width": 1228,
+               "windowId": 63
+            }
+         ],
+         "top": -8,
+         "type": "normal",
+         "width": 1936
       }
    ]
 }
