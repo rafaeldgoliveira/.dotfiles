@@ -9,7 +9,7 @@ if( !$WSL_IP ){
 
 #[Ports]
 #All the ports you want to forward separated by coma
-$ports=@(80,443,3000,3333,4200,5000,5037,5038,8080,8081,9000,10000,19000,19001,39893);
+$ports=@(80,443,3000,3333,4200,5000,5037,5038,8080,8081,9000,10000,19000,19001,42333,39893);
 
 #[Static ip]
 #You can change the addr to your ip config to listen to a specific address

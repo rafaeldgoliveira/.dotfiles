@@ -11,6 +11,7 @@ alias -- -="cd -"
 # Shortcuts
 alias g="git"
 alias cc="clear"
+alias sp="source .bash_profile && source ~/.zshrc"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -119,7 +120,7 @@ alias wsl="cd /mnt/d/Mega/Aplicativos\ Windows/WSL"
 alias af="alias-finder -l"
 
 #npm aliases
-alias ng="npm list -g --depth=0"
+alias nlg="npm list -g --depth=0"
 alias ngu="npm update -g"
 alias nck="npm-check -u"
 

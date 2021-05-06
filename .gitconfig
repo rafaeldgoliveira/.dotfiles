@@ -14,6 +14,9 @@
 	pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD) --recurse-submodules"
 	p = "pull"
 
+	# Restore
+	r = "!git restore"
+
 	# Reset current branch
 	rh = "!git reset --hard $(git rev-parse --abbrev-ref HEAD)"
 	rs = "!git reset --soft $(git rev-parse --abbrev-ref HEAD)"

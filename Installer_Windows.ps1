@@ -1,6 +1,6 @@
 #Requires -RunAsAdministrator
 
-Write-Host "Instale os seguintes aplicativos pela Microsoft Store:" -ForegroundColor Green
+Write-Host "Instale e inicie 1 vez os seguintes aplicativos pela Microsoft Store:" -ForegroundColor Green
 Write-Host "	Windows Terminal (Abrir antes de continuar)" -ForegroundColor Yellow
 Write-Host "	Seu Telefone" -ForegroundColor Yellow
 Write-Host "	Whatsapp" -ForegroundColor Yellow
@@ -48,6 +48,7 @@ choco install 7zip `
 					androidstudio `
 					anki `
 					autohotkey `
+					batteryinfoview `
 					bulkrenameutility `
 					calibre `
 					ccleaner `
@@ -58,14 +59,13 @@ choco install 7zip `
 					crystaldiskmark `
 					ddu `
 					discord `
-					screentogif `
-					docker-desktop `
 					docker-compose `
+					docker-desktop `
 					dropbox `
 					ds4windows `
 					epicgameslauncher `
 					evernote `
-					pandoc `
+					rufus `
 					ffmpeg-batch `
 					firacodenf `
 					firefox `
@@ -93,17 +93,17 @@ choco install 7zip `
 					mp3gain-gui `
 					mp3tag `
 					nodejs-lts `
-					partitionwizard `
+					pandoc `
 					powertoys `
 					processhacker `
 					python3 `
 					recuva `
-					batteryinfoview `
-					reflect-free `
 					remove-empty-directories `
 					revo-uninstaller `
+					rufus `
 					samsung-nvme-driver `
 					samsung-usb-driver `
+					screentogif `
 					spotify `
 					steam `
 					steam-cleaner `
@@ -118,7 +118,6 @@ choco install 7zip `
 					vlc `
 					vscode `
 					whatsapp `
-					win32diskimager	 `
 					wirelessnetview `
 					xmind `
 					yarn `
@@ -159,21 +158,13 @@ New-Item -ItemType SymbolicLink -Path '~\.yarnrc' -Target $currentDir'\.yarnrc'
 New-Item -ItemType SymbolicLink -Path '~\android_dev.ps1' -Target $currentDir'\android_dev.ps1'
 New-Item -ItemType SymbolicLink -Path '~\kill_port.ps1' -Target $currentDir'\kill_port.ps1'
 New-Item -ItemType SymbolicLink -Path '~\wsl2_network.ps1' -Target $currentDir'\wsl2_network.ps1'
-New-Item -ItemType SymbolicLink -Path $WTSettings -Target $currentDir'\prefs\windows_terminal.json'
+New-Item -ItemType SymbolicLink -Path $WTSettings -Target $currentDir'\Preferences\windows_terminal.json'
 
 # Hosts
 Write-Host "Criando o link para o arquivo de hosts..." -ForegroundColor Green
 # Copy-Item $currentDir'\.hosts.windows' -Destination 'C:\Windows\System32\drivers\etc\hosts'
 Remove-Item 'C:\Windows\System32\drivers\etc\hosts' -Recurse -Force
-New-Item -ItemType SymbolicLink -Path 'C:\Windows\System32\drivers\etc\hosts' -Target $currentDir'\.hosts.windows'
-
-# Importa certificados do SERPRO
-Write-Host "Instalando os certificados do SERPRO..." -ForegroundColor Green
-Import-Certificate -Filepath $currentDir\certificados_serpro\AC_Raiz_SERPRO.crt -CertStoreLocation 'Cert:\CurrentUser\Root'
-Import-Certificate -Filepath $currentDir\certificados_serpro\AC_SERPRO_Intra_SSL.crt -CertStoreLocation 'Cert:\CurrentUser\Root'
-Import-Certificate -Filepath $currentDir\certificados_serpro\acserproacfv5.crt -CertStoreLocation 'Cert:\CurrentUser\Root'
-Import-Certificate -Filepath $currentDir\certificados_serpro\acserprov4.crt -CertStoreLocation 'Cert:\CurrentUser\Root'
-Import-Certificate -Filepath $currentDir\certificados_serpro\icpbrasilv5.crt -CertStoreLocation 'Cert:\CurrentUser\Root'
+New-Item -ItemType SymbolicLink -Path 'C:\Windows\System32\drivers\etc\hosts' -Target $currentDir'\.hosts'
 
 # Executa as alterações no registro do Windows
 Write-Host "Executando as alterações no registro do Windows..." -ForegroundColor Green
@@ -201,11 +192,15 @@ Install-Module PowershellGet -Force
 . Reload-Profile
 Install-Module oh-my-posh -Scope CurrentUser -AllowPrerelease -Force
 Install-Module posh-git -Scope CurrentUser -AllowPrerelease -Force
-New-Item -ItemType SymbolicLink -Path 'D:\OneDrive\Documentos\WindowsPowerShell\Microsoft.PowerShell_profile.ps1' -Target $currentDir'\prefs\powershell_profile.ps1'
+New-Item -ItemType SymbolicLink -Path 'D:\OneDrive\Documentos\WindowsPowerShell\Microsoft.PowerShell_profile.ps1' -Target $currentDir'\Preferences\powershell_profile.ps1'
 
 # Yarn Packages
 Write-Host "Instalando os pacotes Yarn..." -ForegroundColor Green
-yarn global add @angular/cli react-native-cli cjs-to-es6 create-react-app json-server react react-native @react-native-community/cli diff-so-fancy git-jump expo-cli eslint prettier eslint-config-prettier eslint-plugin-prettier npm-check nodemon local-web-server
+yarn global add react-native-cli cjs-to-es6 create-react-app json-server react react-native @react-native-community/cli diff-so-fancy git-jump expo-cli eslint prettier nodemon local-web-server
+
+# NPM Packages
+Write-Host "Instalando os pacotes NPM..." -ForegroundColor Green
+npm install -g npm-check @angular/cli npm
 
 # Plugins para discord
 Write-Host "Baixando os plugins para o Discord..." -ForegroundColor Green
