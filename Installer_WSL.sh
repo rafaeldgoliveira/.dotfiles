@@ -104,7 +104,7 @@ sudo rm -rf $scriptDir/.ssh
 7z e $scriptDir/.ssh.zip -o$scriptDir/.ssh
 # Permissão das chaves SSH
 echo -e "${GREEN}Corrigindo as permissões das chaves SSH...${WHITE}"
-sudo chmod -R 400 $HOME/.ssh
+sudo chmod -R 400 $HOME/.ssh/*
 
 echo -e "${GREEN}Instalando o ZSH...${WHITE}"
 cd ~

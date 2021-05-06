@@ -313,7 +313,7 @@ sudo rm -rf $HOME/.ssh
 sudo rm -rf $scriptDir/.ssh
 7z e $scriptDir/.ssh.zip -o$scriptDir/.ssh
 echo "${GREEN}Corrigindo as permissões das chaves SSH...${WHITE}"
-sudo chmod -R 400 $HOME/.ssh
+sudo chmod -R 400 $HOME/.ssh/*
 
 # Deleta configs
 echo "${GREEN}Remove as configurações${WHITE}"
