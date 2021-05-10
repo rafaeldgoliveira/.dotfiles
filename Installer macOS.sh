@@ -14,9 +14,9 @@ scriptDir=$(pwd)
 
 # Renomeia computador
 echo "${GREEN}Renomeando o computador para 'Rafael-macOS'...${WHITE}"
-# scutil --set ComputerName "Rafael-macOS"
-# scutil --set LocalHostName "Rafael-macOS"
-# scutil --set HostName "Rafael-macOS"
+scutil --set ComputerName "Rafael-macOS"
+scutil --set LocalHostName "Rafael-macOS"
+scutil --set HostName "Rafael-macOS"
 
 echo "${GREEN}Instala as versões do XCode...${WHITE}"
 xcode-select --install
@@ -33,7 +33,7 @@ sudo ln -s "$(pwd)/.hosts" /private/etc/hosts
 # Instala o Homebrew
 if test ! $(which brew); then
     echo "${GREEN}Instalando o Homebrew...${WHITE}"
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"f
 fi
 
 # Atualiza as formular do Homebrew
@@ -53,14 +53,11 @@ brew install --cask adoptopenjdk8 \
                     android-messages \
                     android-studio \
                     anki \
-                    caffeine \
                     calibre \
                     ccleaner \
-                    daisydisk \
                     discord \
                     docker \
                     epic-games \
-                    evernote \
                     firefox \
                     font-Fira-Code-nerd-font \
                     google-backup-and-sync \
@@ -78,7 +75,6 @@ brew install --cask adoptopenjdk8 \
                     virtualbox \
                     virtualbox-extension-pack \
                     visual-studio-code \
-                    xmind \
                     yacreader
 
 brew install ack \
@@ -149,6 +145,9 @@ brew install ack \
              zopfli \
              zsh
 
+rm -rf /usr/local/bin/readlink
+ln -s /usr/local/bin/greadlink /usr/local/bin/readlink
+
 brew cleanup
 
 # Oh-My-Zsh
@@ -178,7 +177,7 @@ PYTHON_PACKAGES=(
     virtualenv
     virtualenvwrapper
 )
-sudo pip install ${PYTHON_PACKAGES[@]}
+pip3 install ${PYTHON_PACKAGES[@]}
 
 # Ruby
 echo "${GREEN}Instalando Ruby gems${WHITE}"
@@ -369,6 +368,11 @@ ln -s $scriptDir/.wgetrc $HOME/.wgetrc
 ln -s $scriptDir/.yarnrc $HOME/.yarnrc
 ln -s $scriptDir/.zshrc $HOME/.zshrc
 ln -s $scriptDir/Preferences/spectacle.json '$HOME/Library/Application Support/Spectacle/Shortcuts.json'
+
+# iOS Backup
+echo "${GREEN}Altera o local de backup para iOS...${WHITE}"
+rm -rf ~/Library/Application Support/MobileSync/Backup
+ln -s /Volumes/Dados/Backups/Apple ~/Library/Application\ Support/MobileSync/Backup
 
 echo "${GREEN}Definindo o ZSH como padrão...${WHITE}"
 sudo sh -c "echo $(which zsh) >> /etc/shells" && chsh -s $(which zsh)
