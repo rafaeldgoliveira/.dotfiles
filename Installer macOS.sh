@@ -339,7 +339,6 @@ rm -rf $HOME/.vimrc
 rm -rf $HOME/.wgetrc
 rm -rf $HOME/.yarnrc
 rm -rf $HOME/.zshrc
-rm -rf '$HOME/Library/Application Support/Spectacle/Shortcuts.json'
 
 # Links simbólicos
 echo "${GREEN}Criando os links simbólicos para as configurações...${WHITE}"
@@ -367,7 +366,6 @@ ln -s $scriptDir/.vimrc $HOME/.vimrc
 ln -s $scriptDir/.wgetrc $HOME/.wgetrc
 ln -s $scriptDir/.yarnrc $HOME/.yarnrc
 ln -s $scriptDir/.zshrc $HOME/.zshrc
-ln -s $scriptDir/Preferences/spectacle.json '$HOME/Library/Application Support/Spectacle/Shortcuts.json'
 
 # iOS Backup
 echo "${GREEN}Altera o local de backup para iOS...${WHITE}"
