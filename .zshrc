@@ -118,19 +118,35 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-JAVA_HOME=$(dirname $( readlink -f $(which java) ))
-JAVA_HOME=$(realpath "$JAVA_HOME"/../)
+case "$(uname -s)" in
 
-export JAVA_HOME
+   # Mac OS X
+   # Darwin)
+     
+   #  ;;
 
-export ANDROID_HOME=$HOME/Android
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/cmdline-tools/tools
-export PATH=$PATH:$ANDROID_HOME/cmdline-tools/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+   # Linux
+   Linux)
+	JAVA_HOME=$(dirname $( readlink -f $(which java) ))
+	JAVA_HOME=$(realpath "$JAVA_HOME"/../)
 
-export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
-export ADB_SERVER_SOCKET=tcp:$WSL_HOST:5037
+	export JAVA_HOME
+
+	export ANDROID_HOME=$HOME/Android
+	export PATH=$PATH:$ANDROID_HOME/emulator
+	export PATH=$PATH:$ANDROID_HOME/cmdline-tools/tools
+	export PATH=$PATH:$ANDROID_HOME/cmdline-tools/tools/bin
+	export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+	export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
+	export ADB_SERVER_SOCKET=tcp:$WSL_HOST:5037
+     ;;
+
+   # Other OS
+   #*)
+
+   #  ;;
+esac
 
 export PATH="$PATH:$(yarn global bin)"
 
