@@ -261,8 +261,8 @@ echo "${GREEN}Habilitando o ajuste à grade para ícones na área de trabalho e 
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
-echo "${GREEN}Definindo o tamanho do ícone dos itens do Dock para 36 pixels para um tamanho de tela ideal${WHITE}"
-defaults write com.apple.dock tilesize -int 36
+echo "${GREEN}Definindo o tamanho do ícone dos itens do Dock para 72 pixels para um tamanho de tela ideal${WHITE}"
+defaults write com.apple.dock tilesize -int 72
 
 echo "${GREEN}Acelerando as animações do Mission Control e agrupando as janelas por aplicativo${WHITE}"
 defaults write com.apple.dock expose-animation-duration -float 0.1
