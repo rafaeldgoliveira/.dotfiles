@@ -120,13 +120,12 @@ fi
 
 case "$(uname -s)" in
 
-   # Mac OS X
-   # Darwin)
-     
-   #  ;;
+	# Mac OS X
+	# Darwin)
+	#  ;;
 
-   # Linux
-   Linux)
+	# Linux
+	Linux)
 	JAVA_HOME=$(dirname $( readlink -f $(which java) ))
 	JAVA_HOME=$(realpath "$JAVA_HOME"/../)
 
@@ -140,12 +139,12 @@ case "$(uname -s)" in
 
 	export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
 	export ADB_SERVER_SOCKET=tcp:$WSL_HOST:5037
-     ;;
+		;;
 
-   # Other OS
-   #*)
+	# Other OS
+	#*)
 
-   #  ;;
+	#  ;;
 esac
 
 export PATH="$PATH:$(yarn global bin)"
