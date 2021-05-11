@@ -74,6 +74,7 @@ brew install --cask adoptopenjdk8 \
                     virtualbox \
                     virtualbox-extension-pack \
                     visual-studio-code \
+					unity-hub \
                     yacreader
 
 brew install ack \
