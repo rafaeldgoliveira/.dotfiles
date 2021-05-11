@@ -307,6 +307,7 @@ flutter doctor --android-licenses
 
 # Chaves SSH
 echo "${GREEN}Deletando e extraindo as chaves SSH...${WHITE}"
+cd ~
 sudo rm -rf $HOME/.ssh
 sudo rm -rf $scriptDir/.ssh
 7z e $scriptDir/.ssh.zip -o$scriptDir/.ssh
@@ -315,6 +316,7 @@ sudo chmod -R 400 $HOME/.ssh/*
 
 # Deleta configs
 echo "${GREEN}Remove as configurações${WHITE}"
+cd $scriptDir
 rm -rf $HOME/.aliases
 rm -rf $HOME/.bash_profile
 rm -rf $HOME/.bash_prompt
