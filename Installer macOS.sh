@@ -300,6 +300,7 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Flutter
 echo "${GREEN}Instalando o Flutter SDK...${WHITE}"
+cd ~
 git clone https://github.com/flutter/flutter.git -b stable --depth 1
 export PATH="$PATH:`pwd`/flutter/bin"
 flutter doctor
@@ -307,7 +308,6 @@ flutter doctor --android-licenses
 
 # Chaves SSH
 echo "${GREEN}Deletando e extraindo as chaves SSH...${WHITE}"
-cd ~
 sudo rm -rf $HOME/.ssh
 sudo rm -rf $scriptDir/.ssh
 7z e $scriptDir/.ssh.zip -o$scriptDir/.ssh
