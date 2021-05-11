@@ -71,7 +71,6 @@ brew install --cask adoptopenjdk8 \
                     steam \
                     stremio \
                     transmission \
-                    veracrypt \
                     virtualbox \
                     virtualbox-extension-pack \
                     visual-studio-code \
