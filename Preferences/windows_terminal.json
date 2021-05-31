@@ -119,7 +119,7 @@
 			"backgroundImageOpacity": 1.0,
 			"backgroundImageStretchMode": "none",
 			"bellStyle": "visual",
-			"colorScheme": "Cobalt2",
+			"colorScheme": "Dracula",
 			"experimental.retroTerminalEffect": false,
 			"fontFace": "MesloLGS NF",
 			"fontSize": 11,
@@ -127,16 +127,16 @@
 		},
 		"list": [
 			{
-				"backgroundImage": "D:\\Projetos\\.dotfiles\\imgs\\powershell.png",
+				"backgroundImage": "D:\\Projetos\\.dotfiles\\Images\\powershell.png",
 				"commandline": "powershell.exe",
 				"guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
 				"hidden": false,
 				"name": "Windows PowerShell",
 				"padding": "30",
-				"startingDirectory": "~"
+				"startingDirectory": "C:\\Users\\rafael"
 			},
 			{
-				"backgroundImage": "D:\\Projetos\\.dotfiles\\imgs\\ubuntu.png",
+				"backgroundImage": "D:\\Projetos\\.dotfiles\\Images\\ubuntu.png",
 				"guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
 				"hidden": false,
 				"name": "Ubuntu-20.04",
@@ -145,7 +145,7 @@
 				"startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\rafael"
 			},
 			{
-				"backgroundImage": "D:\\Projetos\\.dotfiles\\imgs\\cmd.png",
+				"backgroundImage": "D:\\Projetos\\.dotfiles\\Images\\cmd.png",
 				"commandline": "cmd.exe",
 				"guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
 				"hidden": true,
@@ -414,6 +414,29 @@
 			"selectionBackground": "#FFFFFF",
 			"white": "#C0C0C0",
 			"yellow": "#808000"
+		},
+		{
+			"name": "Dracula",
+			"cursorColor": "#F8F8F2",
+			"selectionBackground": "#44475A",
+			"background": "#282A36",
+			"foreground": "#F8F8F2",
+			"black": "#21222C",
+			"blue": "#BD93F9",
+			"cyan": "#8BE9FD",
+			"green": "#50FA7B",
+			"purple": "#FF79C6",
+			"red": "#FF5555",
+			"white": "#F8F8F2",
+			"yellow": "#F1FA8C",
+			"brightBlack": "#6272A4",
+			"brightBlue": "#D6ACFF",
+			"brightCyan": "#A4FFFF",
+			"brightGreen": "#69FF94",
+			"brightPurple": "#FF92DF",
+			"brightRed": "#FF6E6E",
+			"brightWhite": "#FFFFFF",
+			"brightYellow": "#FFFFA5"
 		}
 	],
 	"tabWidthMode": "equal"

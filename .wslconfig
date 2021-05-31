@@ -1,7 +1,7 @@
 [wsl2]
 #kernel=               # An absolute Windows path to a custom Linux kernel.
-memory=6GB             # How much memory to assign to the WSL2 VM.
-processors=4           # How many processors to assign to the WSL2 VM.
+memory=3GB             # How much memory to assign to the WSL2 VM.
+processors=2           # How many processors to assign to the WSL2 VM.
 #swap=                 # How much swap space to add to the WSL2 VM. 0 for no swap file.
 #swapFile=             # An absolute Windows path to the swap vhd.
 #localhostForwarding=  # Boolean specifying if ports bound to wildcard or localhost in the WSL2 VM should be connectable from the host via localhost:port (default true)

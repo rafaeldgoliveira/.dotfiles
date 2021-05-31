@@ -39,37 +39,37 @@ sudo apt-get dist-upgrade -y
 
 echo -e "${GREEN}Instalando os Apps...${WHITE}"
 sudo apt-get install -y adoptopenjdk-8-hotspot \
-						apt-transport-https \
-						bash \
-						build-essential \
-						curl \
-						file \
-						findutils \
-						fzf \
-						git \
-						google-chrome-stable \
-						gradle \
-						grep \
-						htop \
-						lib32z1 \
-						libssl-dev \
-						moreutils \
-						net-tools \
-						nmap \
-						p7zip-full \
-						p7zip-rar \
-						pandoc \
-						pipenv \
-						pypy3 \
-						python3 \
-						software-properties-common \
-						speedtest-cli \
-						tree \
-						unzip \
-						wget \
-						yarn \
-						zip \
-						zsh
+	apt-transport-https \
+	bash \
+	build-essential \
+	curl \
+	file \
+	findutils \
+	fzf \
+	git \
+	google-chrome-stable \
+	gradle \
+	grep \
+	htop \
+	lib32z1 \
+	libssl-dev \
+	moreutils \
+	net-tools \
+	nmap \
+	p7zip-full \
+	p7zip-rar \
+	pandoc \
+	pipenv \
+	pypy3 \
+	python3 \
+	software-properties-common \
+	speedtest-cli \
+	tree \
+	unzip \
+	wget \
+	yarn \
+	zip \
+	zsh
 
 sudo apt-get autoremove -y
 
@@ -102,9 +102,6 @@ echo -e "${GREEN}Deletando e extraindo as chaves SSH...${WHITE}"
 sudo rm -rf $HOME/.ssh
 sudo rm -rf $scriptDir/.ssh
 7z e $scriptDir/.ssh.zip -o$scriptDir/.ssh
-# Permissão das chaves SSH
-echo -e "${GREEN}Corrigindo as permissões das chaves SSH...${WHITE}"
-sudo chmod -R 400 $HOME/.ssh/*
 
 echo -e "${GREEN}Instalando o ZSH...${WHITE}"
 cd ~
@@ -151,10 +148,11 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
 #Flutter
 echo -e "${GREEN}Instalando o Flutter SDK...${WHITE}"
+cd ~
 git clone https://github.com/flutter/flutter.git -b stable --depth 1
-export PATH="$PATH:`pwd`/flutter/bin"
-flutter doctor
+export PATH="$PATH:$(pwd)/flutter/bin"
 flutter doctor --android-licenses
+flutter doctor
 
 # Deleta configs
 echo -e "${GREEN}Deletando as configurações existentes...${WHITE}"
@@ -179,6 +177,7 @@ rm -rf $HOME/.vimrc
 rm -rf $HOME/.wgetrc
 rm -rf $HOME/.yarnrc
 rm -rf $HOME/.zshrc
+rm -rf /etc/wsl.conf
 
 # Links simbólicos
 echo -e "${GREEN}Criando os links simbólicos para as configurações...${WHITE}"
@@ -205,6 +204,13 @@ ln -s $scriptDir/.vimrc $HOME/.vimrc
 ln -s $scriptDir/.wgetrc $HOME/.wgetrc
 ln -s $scriptDir/.yarnrc $HOME/.yarnrc
 ln -s $scriptDir/.zshrc $HOME/.zshrc
+ln -s $scriptDir/.wsl.conf /etc/wsl.conf
+
+# Permissão das chaves SSH
+echo -e "${GREEN}Corrigindo as permissões das chaves SSH...${WHITE}"
+sudo printf "[automount]" >>/etc/wsl.conf
+sudo printf "options = "metadata"" >>/etc/wsl.conf
+sudo chmod -R 400 $HOME/.ssh/*
 
 echo -e "${GREEN}Definindo o ZSH como padrão...${WHITE}"
 sudo sh -c "echo -e $(which zsh) >> /etc/shells" && chsh -s $(which zsh)
