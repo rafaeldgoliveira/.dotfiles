@@ -32,8 +32,8 @@ sudo ln -s "$(pwd)/.hosts" /private/etc/hosts
 
 # Instala o Homebrew
 if test ! $(which brew); then
-	echo "${GREEN}Instalando o Homebrew...${WHITE}"
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"f
+  echo "${GREEN}Instalando o Homebrew...${WHITE}"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"f
 fi
 
 # Atualiza as formular do Homebrew
@@ -50,100 +50,101 @@ brew tap homebrew/cask-fonts
 # Pacotes
 echo "${GREEN}Instala os pacotes do Homebrew${WHITE}"
 brew install --cask adoptopenjdk8 \
-	android-messages \
-	android-studio \
-	anki \
-	calibre \
-	ccleaner \
-	discord \
-	docker \
-	epic-games \
-	firefox \
-	font-Fira-Code-nerd-font \
-	google-backup-and-sync \
-	google-chrome \
-	handbrake \
-	insomnia \
-	iterm2 \
-	libreoffice \
-	megasync \
-	spotify \
-	steam \
-	stremio \
-	transmission \
-	virtualbox \
-	virtualbox-extension-pack \
-	visual-studio-code \
-	unity-hub \
-	yacreader
+  android-messages \
+  android-studio \
+  anki \
+  calibre \
+  ccleaner \
+  discord \
+  docker \
+  epic-games \
+  firefox \
+  font-Fira-Code-nerd-font \
+  google-backup-and-sync \
+  google-chrome \
+  handbrake \
+  insomnia \
+  iterm2 \
+  libreoffice \
+  megasync \
+  spotify \
+  steam \
+  stremio \
+  transmission \
+  virtualbox \
+  virtualbox-extension-pack \
+  visual-studio-code \
+  unity-hub \
+  yacreader
 
 brew install ack \
-	automake \
-	bash \
-	bash-completion2 \
-	coreutils \
-	ffmpeg \
-	findutils \
-	fzf \
-	gettext \
-	git \
-	git-lfs \
-	gmp \
-	gnu-indent \
-	gnu-sed \
-	gnu-tar \
-	gnu-which \
-	gnupg \
-	gradle \
-	grep \
-	gs \
-	htop \
-	httpie \
-	imagemagick \
-	jq \
-	libjpeg \
-	libmemcached \
-	librsvg \
-	python \
-	homebrew/cask/basictex \
-	lua \
-	lynx \
-	luarocks \
-	markdown \
-	memcached \
-	microsoft-edge \
-	moreutils \
-	nmap \
-	node@14 \
-	nvm \
-	openssh \
-	p7zip \
-	pandoc \
-	pigz \
-	pkg-config \
-	pv \
-	pypy \
-	python3 \
-	rename \
-	rlwrap \
-	screen \
-	sfnt2woff \
-	sfnt2woff-zopfli \
-	speedtest-cli \
-	ssh-copy-id \
-	terminal-notifier \
-	the_silver_searcher \
-	tree \
-	unzip \
-	vbindiff \
-	vim \
-	watchman \
-	wget \
-	woff2 \
-	yarn \
-	youtube-dl \
-	zopfli \
-	zsh
+  alt-tab \
+  automake \
+  bash \
+  bash-completion2 \
+  coreutils \
+  ffmpeg \
+  findutils \
+  fzf \
+  gettext \
+  git \
+  git-lfs \
+  gmp \
+  gnu-indent \
+  gnu-sed \
+  gnu-tar \
+  gnu-which \
+  gnupg \
+  gradle \
+  grep \
+  gs \
+  htop \
+  httpie \
+  imagemagick \
+  jq \
+  libjpeg \
+  libmemcached \
+  librsvg \
+  python \
+  homebrew/cask/basictex \
+  lua \
+  lynx \
+  luarocks \
+  markdown \
+  memcached \
+  microsoft-edge \
+  moreutils \
+  nmap \
+  node@14 \
+  nvm \
+  openssh \
+  p7zip \
+  pandoc \
+  pigz \
+  pkg-config \
+  pv \
+  pypy \
+  python3 \
+  rename \
+  rlwrap \
+  screen \
+  sfnt2woff \
+  sfnt2woff-zopfli \
+  speedtest-cli \
+  ssh-copy-id \
+  terminal-notifier \
+  the_silver_searcher \
+  tree \
+  unzip \
+  vbindiff \
+  vim \
+  watchman \
+  wget \
+  woff2 \
+  yarn \
+  youtube-dl \
+  zopfli \
+  zsh
 
 rm -rf /usr/local/bin/readlink
 ln -s /usr/local/bin/greadlink /usr/local/bin/readlink
@@ -173,18 +174,18 @@ git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-
 # Python
 echo "${GREEN}Instalando pacotes do Python...${WHITE}"
 PYTHON_PACKAGES=(
-	ipython
-	virtualenv
-	virtualenvwrapper
+  ipython
+  virtualenv
+  virtualenvwrapper
 )
 pip3 install ${PYTHON_PACKAGES[@]}
 
 # Ruby
 echo "${GREEN}Instalando Ruby gems${WHITE}"
 RUBY_GEMS=(
-	bundler
-	filewatcher
-	cocoapods
+  bundler
+  filewatcher
+  cocoapods
 )
 sudo gem install ${RUBY_GEMS[@]}
 sudo gem install cocoapods
