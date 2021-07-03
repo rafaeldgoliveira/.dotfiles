@@ -125,7 +125,6 @@ choco install 7zip `
 	mp3gain `
 	mp3gain-gui `
 	mp3tag `
-	nodejs-lts `
 	pandoc `
 	powertoys `
 	processhacker `
@@ -133,7 +132,6 @@ choco install 7zip `
 	recuva `
 	remove-empty-directories `
 	revo-uninstaller `
-	rufus `
 	rufus `
 	samsung-nvme-driver `
 	samsung-usb-driver `
@@ -160,6 +158,9 @@ choco install 7zip `
 	yarn `
 	youtube-dl-gui --ignore-checksums -y
 
+# 14.17.1 está com bug. Atualizar para outra versão quando tiver sido corrigido
+choco install nodejs-lts --version 14.17.1 -y
+
 do
 {
 	$response = $Host.UI.PromptForChoice('', 'Já abriu o Windows Terminal, iTunes, Discord,  e Spotify?', $options, $default)
@@ -170,17 +171,17 @@ do
 
 # Deleta as configurações existentes
 Write-Host "Deletando as configurações existentes..." -ForegroundColor Green
-Remove-Item '~\.editorconfig' -Force
-Remove-Item '~\.gitattributes' -Force
-Remove-Item '~\.gitconfig' -Force
-Remove-Item '~\.npmrc' -Force
-Remove-Item '~\.wslconfig' -Force
-Remove-Item '~\.yarnrc' -Force
-Remove-Item '~\android_dev.ps1' -Force
-Remove-Item '~\kill_port.ps1' -Force
-Remove-Item '~\wsl2_network.ps1' -Force
-Remove-Item '~\.ssh' -Recurse -Force
-(Get-Item '~\.ssh').Delete()
+# Remove-Item '~\.editorconfig' -Force
+# Remove-Item '~\.gitattributes' -Force
+# Remove-Item '~\.gitconfig' -Force
+# Remove-Item '~\.npmrc' -Force
+# Remove-Item '~\.wslconfig' -Force
+# Remove-Item '~\.yarnrc' -Force
+# Remove-Item '~\android_dev.ps1' -Force
+# Remove-Item '~\kill_port.ps1' -Force
+# Remove-Item '~\wsl2_network.ps1' -Force
+# Remove-Item '~\.ssh' -Recurse -Force
+# (Get-Item '~\.ssh').Delete()
 Remove-Item $WTSettings -Force
 
 # Extrai chaves SSH
@@ -222,18 +223,21 @@ reg import $currentDir'\Windows_Registry\Time Fix - Windows\Windows Universal Ti
 
 # Cria link simbolico para backups da Apple
 Write-Host "Criando um link simbolico para a pasta de backups Apple..." -ForegroundColor Green
-Remove-Item '%HOMEPATH%\Apple\MobileSync\Backup'
-New-Item -Path '%HOMEPATH%\Apple\MobileSync' -ItemType directory
-New-Item -ItemType SymbolicLink -Path '%HOMEPATH%\Apple\MobileSync\Backup' -Target 'D:\Backups\Apple'
+New-Item -Path '~\AppData\Roaming\Apple Computer\MobileSync' -ItemType directory
+New-Item -ItemType SymbolicLink -Path '~\AppData\Roaming\Apple Computer\MobileSync\sBackup' -Target 'D:\Backups\Apple'
 
 # Oh-My-Posh
 Write-Host "Instalando e configurando o Oh-My-Posh..." -ForegroundColor Green
 Remove-Item 'D:\OneDrive\Documentos\WindowsPowerShell\Microsoft.PowerShell_profile.ps1' -Force
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 
+Install-Module PowerShellGet -RequiredVersion 2.2.4 -SkipPublisherCheck - Force
 Remove-ItemAlternative -Path "D:\OneDrive\Documentos\WindowsPowerShell\Modules"
 Remove-ItemAlternative -Path "D:\OneDrive\Documentos\WindowsPowerShell\Scripts"
 & .\Update-Powershell-Modules.ps1
-Install-Module oh-my-posh -Scope CurrentUser -AllowPrerelease -Force
-Install-Module posh-git -Scope CurrentUser -AllowPrerelease -Force
+
+Install-Module oh-my-posh -Scope CurrentUser -Force
+Install-Module posh-git -Scope CurrentUser -Force
+
 New-Item -ItemType SymbolicLink -Path 'D:\OneDrive\Documentos\WindowsPowerShell\Microsoft.PowerShell_profile.ps1' -Target $currentDir'\Preferences\powershell_profile.ps1'
 
 Restart-Profile
@@ -262,12 +266,6 @@ Invoke-WebRequest -Uri https://raw.githubusercontent.com/mwittrien/BetterDiscord
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/mwittrien/BetterDiscordAddons/master/Plugins/SendLargeMessages/SendLargeMessages.plugin.js -OutFile $downloadDir'\SendLargeMessages.plugin.js'
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/mwittrien/BetterDiscordAddons/master/Plugins/SpotifyControls/SpotifyControls.plugin.js -OutFile $downloadDir'\SpotifyControls.plugin.js'
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/mwittrien/BetterDiscordAddons/master/Plugins/SteamProfileLink/SteamProfileLink.plugin.js -OutFile $downloadDir'\SteamProfileLink.plugin.js'
-
-#Tema para o Files
-Write-Host "Copiando o tema do Files" -ForegroundColor Green
-[string]$FilesFolder = Resolve-Path %userprofile%\AppData\Local\Packages\*FilesUWP*\LocalState\
-New-Item -ItemType directory -Path $FilesFolder'\Themes'
-New-Item -ItemType SymbolicLink -Path $FilesFolder'\Themes\Dracula.files.xaml' -Target $currentDir'\Themes\Dracula.files.xaml'
 
 # Tema para o Powershell
 Write-Host "Instando o tema Dracula no Powershell" -ForegroundColor Green
