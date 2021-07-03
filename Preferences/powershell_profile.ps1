@@ -35,6 +35,8 @@ New-Alias sudo gsudo
 function suu()
 {
 	sudo choco upgrade all -y
+	ngu
+	ygu
 }
 
 function wr

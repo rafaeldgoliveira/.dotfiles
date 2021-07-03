@@ -4,66 +4,24 @@ Write-Host "Não use o WindowsTerminal para executar esse script ou as configura
 Write-Host "Instale e INICIE 1 vez os seguintes aplicativos pela Microsoft Store:" -ForegroundColor Green
 Write-Host "	Windows Terminal (Abrir antes de continuar)" -ForegroundColor Yellow
 Write-Host "	Seu Telefone" -ForegroundColor Yellow
-Write-Host "	ITunes" -ForegroundColor Yellow
-Write-Host "	Whatsapp" -ForegroundColor Yellow
-Write-Host "	Spotify" -ForegroundColor Yellow
-Write-Host "	Telegram" -ForegroundColor Yellow
 Write-Host "	Prime Video" -ForegroundColor Yellow
 Write-Host "	Bluetooth Audio Receiver" -ForegroundColor Yellow
 Write-Host "	Netflix" -ForegroundColor Yellow
 Write-Host "	Xbox" -ForegroundColor Yellow
 Write-Host "	Procurar 'extensões' na MS Store" -ForegroundColor Yellow
-$title   = '-----------------------------------------'
 Write-Host "	Configure o OneDrive para o drive D" -ForegroundColor Yellow
-$msg     = 'Já instalou os aplicativos?'
+
 $options = '&S', '&N'
 $default = 1  # 0=S, 1=N
 
-Write-Host "Instala alguns apps pré-determinados..." -ForegroundColor Green
-$exeApplications = @(
-	# '3uTools_v2.56.012_Setup',
-	# 'Battle.net',
-	# 'Bloody7',
-	# 'Caption',
-	# 'DeviceRemover',
-	# 'BetterDiscord',
-	# 'Kaspersky Total Security',
-	# 'MSI_Kombustor4',
-	# 'MSIAfterburner',
-	# 'QTTabBar',
-	# 'RemotePlayInstaller',
-	# 'RTSS',
-	# 'SamsungDeX',
-	# 'SmartSwitchPC',
-	# 'WeMod',
-	# 'FreeFileSync',
-	# 'NVIDIA_RTX_Voice',
-	# 'VdhCoApp',
-	# 'Samsung_Magician',
-	# 'TeraCopy Pro 3.6.0.4\TeraCopy Pro 3.6.0.4',
-	# 'Foxit PhantomPDF Business 10.0.1.35811 + Crack\FoxitPhantomPDF1001_L10N_Setup_Website',
-	# 'G5 5590\Dell-Update-Application-for-Windows-10_7CKK6_WIN_4.1.0_A00'
-	# 'G5 5590\SupportAssist-Update-Plugin-Application_5K3C0_WIN_5.1.0.11858_A00'
-)
-ForEach ($item in $exeApplications)
-{
-	Write-Host "Instalando o aplicativo: $item" -ForegroundColor Green
-	Start-Process "D:\Mega\Aplicativos Windows\$item.exe" -Wait -Verb runas
-}
-
 do
 {
-	$response = $Host.UI.PromptForChoice($title, $msg, $options, $default)
+	$response = $Host.UI.PromptForChoice('', 'Já instalou os aplicativos?', $options, $default)
 } until ($response -eq 0)
 
-function Reload-Profile
+function Restart-Profile
 {
-	@(
-		$Profile.AllUsersAllHosts,
-		$Profile.AllUsersCurrentHost,
-		$Profile.CurrentUserAllHosts,
-		$Profile.CurrentUserCurrentHost
-	) | % {
+	@($Profile.AllUsersAllHosts,$Profile.AllUsersCurrentHost,$Profile.CurrentUserAllHosts,$Profile.CurrentUserCurrentHost) | ForEach-Object {
 		if(Test-Path $_)
 		{
 			Write-Verbose "Running $_"
@@ -71,7 +29,6 @@ function Reload-Profile
 		}
 	}
 }
-
 
 function Remove-ItemAlternative
 {
@@ -110,7 +67,6 @@ function Remove-ItemAlternative
 	}
 }
 
-
 # Renomeia o computador
 Write-Host "Renomeando o computador para 'Rafael-Windows'" -ForegroundColor Green
 Rename-Computer -NewName "Rafael-Windows"
@@ -143,7 +99,6 @@ choco install 7zip `
 	ds4windows `
 	epicgameslauncher `
 	evernote `
-	rufus `
 	ffmpeg-batch `
 	firefox `
 	fzf `
@@ -159,6 +114,7 @@ choco install 7zip `
 	hwmonitor `
 	insomnia-rest-api-client `
 	irfanview `
+	itunes `
 	lame `
 	libreoffice-fresh `
 	linkshellextension `
@@ -178,27 +134,36 @@ choco install 7zip `
 	remove-empty-directories `
 	revo-uninstaller `
 	rufus `
+	rufus `
 	samsung-nvme-driver `
 	samsung-usb-driver `
 	screentogif `
+	spotify `
 	steam `
 	steam-cleaner `
 	stremio `
+	telegram `
 	throttlestop `
 	transmission `
 	treesizefree `
 	twitch `
 	unchecky `
+	unity-hub `
 	veracrypt `
 	virtualbox `
 	vlc `
 	vscode `
+	whatsapp `
 	wirelessnetview `
 	xmind `
-	yarn `
 	yacreader `
-	unity-hub `
+	yarn `
 	youtube-dl-gui --ignore-checksums -y
+
+do
+{
+	$response = $Host.UI.PromptForChoice('', 'Já abriu o Windows Terminal, iTunes, Discord,  e Spotify?', $options, $default)
+} until ($response -eq 0)
 
 [string]$currentDir = Get-Location
 [string]$WTSettings = Resolve-Path ~\AppData\Local\Packages\Microsoft.WindowsTerminalPreview*\LocalState\settings.json
@@ -239,7 +204,6 @@ New-Item -ItemType SymbolicLink -Path $WTSettings -Target $currentDir'\Preferenc
 
 # Hosts
 Write-Host "Criando o link para o arquivo de hosts..." -ForegroundColor Green
-# Copy-Item $currentDir'\.hosts.windows' -Destination 'C:\Windows\System32\drivers\etc\hosts'
 Remove-Item 'C:\Windows\System32\drivers\etc\hosts' -Recurse -Force
 New-Item -ItemType SymbolicLink -Path 'C:\Windows\System32\drivers\etc\hosts' -Target $currentDir'\.hosts'
 
@@ -272,7 +236,7 @@ Install-Module oh-my-posh -Scope CurrentUser -AllowPrerelease -Force
 Install-Module posh-git -Scope CurrentUser -AllowPrerelease -Force
 New-Item -ItemType SymbolicLink -Path 'D:\OneDrive\Documentos\WindowsPowerShell\Microsoft.PowerShell_profile.ps1' -Target $currentDir'\Preferences\powershell_profile.ps1'
 
-Reload-Profile
+Restart-Profile
 
 # Yarn Packages
 Write-Host "Instalando os pacotes Yarn..." -ForegroundColor Green
