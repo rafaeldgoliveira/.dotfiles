@@ -1,5 +1,7 @@
 #Requires -RunAsAdministrator
 
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
 Write-Host "Não use o WindowsTerminal para executar esse script ou as configurações dele não serão sobrescritas" -ForegroundColor Red
 Write-Host "Instale e INICIE 1 vez os seguintes aplicativos pela Microsoft Store:" -ForegroundColor Green
 Write-Host "	Windows Terminal (Abrir antes de continuar)" -ForegroundColor Yellow
@@ -228,15 +230,16 @@ New-Item -ItemType SymbolicLink -Path '~\AppData\Roaming\Apple Computer\MobileSy
 
 # Oh-My-Posh
 Write-Host "Instalando e configurando o Oh-My-Posh..." -ForegroundColor Green
-Remove-Item 'D:\OneDrive\Documentos\WindowsPowerShell\Microsoft.PowerShell_profile.ps1' -Force
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 
-Install-Module PowerShellGet -RequiredVersion 2.2.4 -SkipPublisherCheck - Force
-Remove-ItemAlternative -Path "D:\OneDrive\Documentos\WindowsPowerShell\Modules"
-Remove-ItemAlternative -Path "D:\OneDrive\Documentos\WindowsPowerShell\Scripts"
+Write-Host "Delete o Profile do Powershell e remove as pastas Modules e Scripts!" -ForegroundColor Yellow
+$options = '&S', '&N'
+$default = 1  # 0=S, 1
 & .\Update-Powershell-Modules.ps1
 
-Install-Module oh-my-posh -Scope CurrentUser -Force
-Install-Module posh-git -Scope CurrentUser -Force
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 
+Install-Module -Name PowerShellGet -Force
+Update-Module -Name PowerShellGet
+Install-Module -Name oh-my-posh -AllowPrerelease -Force
+Install-Module -Name posh-git -AllowPrerelease -Force
 
 New-Item -ItemType SymbolicLink -Path 'D:\OneDrive\Documentos\WindowsPowerShell\Microsoft.PowerShell_profile.ps1' -Target $currentDir'\Preferences\powershell_profile.ps1'
 
