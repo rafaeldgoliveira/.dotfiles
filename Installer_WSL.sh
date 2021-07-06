@@ -126,6 +126,7 @@ git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-
 # Android SDK Tools
 echo -e "${GREEN}Configurando o AndroidSDK...${WHITE}"
 cd ~
+
 # Update: https://developer.android.com/studio/#downloads > "Command line tools only"
 wget https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip
 mkdir -p Android/cmdline-tools
@@ -143,10 +144,10 @@ export ANDROID_HOME=/home/rafael/Android
 export PATH="$PATH:$ANDROID_HOME/cmdline-tools/tools"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
-# https://developer.android.com/studio/command-line/sdkmanager
+https://developer.android.com/studio/command-line/sdkmanager
 ./sdkmanager --update
 
-#Flutter
+Flutter
 echo -e "${GREEN}Instalando o Flutter SDK...${WHITE}"
 cd ~
 git clone https://github.com/flutter/flutter.git -b stable --depth 1
@@ -176,8 +177,10 @@ rm -rf $HOME/.tmux.conf
 rm -rf $HOME/.vimrc
 rm -rf $HOME/.wgetrc
 rm -rf $HOME/.yarnrc
+rm -rf $HOME/.ssh
+rm -rf $HOME/.vim
 rm -rf $HOME/.zshrc
-rm -rf /etc/wsl.conf
+sudo rm -rf /etc/wsl.conf
 
 # Links simbólicos
 echo -e "${GREEN}Criando os links simbólicos para as configurações...${WHITE}"
@@ -204,13 +207,11 @@ ln -s $scriptDir/.vimrc $HOME/.vimrc
 ln -s $scriptDir/.wgetrc $HOME/.wgetrc
 ln -s $scriptDir/.yarnrc $HOME/.yarnrc
 ln -s $scriptDir/.zshrc $HOME/.zshrc
-ln -s $scriptDir/.wsl.conf /etc/wsl.conf
+sudo ln -s $scriptDir/.wsl.conf /etc/wsl.conf
 
 # Permissão das chaves SSH
 echo -e "${GREEN}Corrigindo as permissões das chaves SSH...${WHITE}"
-sudo printf "[automount]" >>/etc/wsl.conf
-sudo printf "options = "metadata"" >>/etc/wsl.conf
 sudo chmod -R 400 $HOME/.ssh/*
 
-echo -e "${GREEN}Definindo o ZSH como padrão...${WHITE}"
+# echo -e "${GREEN}Definindo o ZSH como padrão...${WHITE}"
 sudo sh -c "echo -e $(which zsh) >> /etc/shells" && chsh -s $(which zsh)

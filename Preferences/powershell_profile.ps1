@@ -73,3 +73,8 @@ function yup
 {
 	yarn upgrade-interactive --latest
 }
+
+function clear-history
+{
+	Remove-Item "~\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt"
+}

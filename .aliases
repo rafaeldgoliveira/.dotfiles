@@ -140,3 +140,6 @@ alias rnr="react-native run-android --deviceId"
 
 # adb
 alias adbr="adb tcpip"
+
+# Clear history files
+alias clear-history="rm -rf .bash_history .cache .pub-cache .zcompdump .zcompdump-Rafael-Windows-5.8 .zsh_history"

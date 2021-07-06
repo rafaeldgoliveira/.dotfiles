@@ -127,6 +127,7 @@ choco install 7zip `
 	mp3gain `
 	mp3gain-gui `
 	mp3tag `
+	nodejs-lts `
 	pandoc `
 	powertoys `
 	processhacker `
@@ -159,9 +160,6 @@ choco install 7zip `
 	yacreader `
 	yarn `
 	youtube-dl-gui --ignore-checksums -y
-
-# 14.17.1 está com bug. Atualizar para outra versão quando tiver sido corrigido
-choco install nodejs-lts --version 14.17.1 -y
 
 do
 {
@@ -226,16 +224,15 @@ reg import $currentDir'\Windows_Registry\Time Fix - Windows\Windows Universal Ti
 # Cria link simbolico para backups da Apple
 Write-Host "Criando um link simbolico para a pasta de backups Apple..." -ForegroundColor Green
 New-Item -Path '~\AppData\Roaming\Apple Computer\MobileSync' -ItemType directory
-New-Item -ItemType SymbolicLink -Path '~\AppData\Roaming\Apple Computer\MobileSync\sBackup' -Target 'D:\Backups\Apple'
+New-Item -ItemType SymbolicLink -Path '~\AppData\Roaming\Apple Computer\MobileSync\Backup' -Target 'D:\Backups\Apple'
 
 # Oh-My-Posh
 Write-Host "Instalando e configurando o Oh-My-Posh..." -ForegroundColor Green
-Write-Host "Delete o Profile do Powershell e remove as pastas Modules e Scripts!" -ForegroundColor Yellow
+Write-Host "Deletou o Profile do Powershell e removeu as pastas Modules e Scripts!" -ForegroundColor Yellow
 $options = '&S', '&N'
 $default = 1  # 0=S, 1
-& .\Update-Powershell-Modules.ps1
 
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Install-Module -Name PowerShellGet -Force
 Update-Module -Name PowerShellGet
 Install-Module -Name oh-my-posh -AllowPrerelease -Force
@@ -269,8 +266,3 @@ Invoke-WebRequest -Uri https://raw.githubusercontent.com/mwittrien/BetterDiscord
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/mwittrien/BetterDiscordAddons/master/Plugins/SendLargeMessages/SendLargeMessages.plugin.js -OutFile $downloadDir'\SendLargeMessages.plugin.js'
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/mwittrien/BetterDiscordAddons/master/Plugins/SpotifyControls/SpotifyControls.plugin.js -OutFile $downloadDir'\SpotifyControls.plugin.js'
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/mwittrien/BetterDiscordAddons/master/Plugins/SteamProfileLink/SteamProfileLink.plugin.js -OutFile $downloadDir'\SteamProfileLink.plugin.js'
-
-# Tema para o Powershell
-Write-Host "Instando o tema Dracula no Powershell" -ForegroundColor Green
-& Themes\Powershell\install.cmd
-Write-Host "É interessante setar a cor da Barra de Titulos do Windows para: #262835" -ForegroundColor Yellow
