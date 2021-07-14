@@ -138,7 +138,7 @@ export JAVA_HOME=/usr/lib/jvm/adoptopenjdk-8-hotspot-amd64
 export PATH="$PATH:$JAVA_HOME/bin"
 
 cd ~/Android/cmdline-tools/tools/bin
-./sdkmanager "platform-tools" "platforms;android-30" "build-tools;30.0.3"
+./sdkmanager "platform-tools" "platforms;android-30" "build-tools;31.0.0"
 
 export ANDROID_HOME=/home/rafael/Android
 export PATH="$PATH:$ANDROID_HOME/cmdline-tools/tools"
