@@ -200,7 +200,6 @@ ln -s $scriptDir/.inputrc $HOME/.inputrc
 ln -s $scriptDir/.npmrc $HOME/.npmrc
 ln -s $scriptDir/.profile $HOME/.profile
 ln -s $scriptDir/.screenrc $HOME/.screenrc
-ln -s $scriptDir/.ssh $HOME/.ssh
 ln -s $scriptDir/.tmux.conf $HOME/.tmux.conf
 ln -s $scriptDir/.vim $HOME/.vim
 ln -s $scriptDir/.vimrc $HOME/.vimrc
@@ -211,6 +210,7 @@ sudo ln -s $scriptDir/.wsl.conf /etc/wsl.conf
 
 # Permissão das chaves SSH
 echo -e "${GREEN}Corrigindo as permissões das chaves SSH...${WHITE}"
+cp -R /$scriptDir/.ssh $HOME
 sudo chmod -R 400 $HOME/.ssh/*
 
 # echo -e "${GREEN}Definindo o ZSH como padrão...${WHITE}"

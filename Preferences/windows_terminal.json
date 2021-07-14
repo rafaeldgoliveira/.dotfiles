@@ -121,8 +121,8 @@
 			"bellStyle": "visual",
 			"colorScheme": "Dracula",
 			"experimental.retroTerminalEffect": false,
-			"fontFace": "MesloLGS NF",
-			"fontSize": 11,
+			"fontFace": "FiraCode Nerd Font",
+			"fontSize": 12,
 			"historySize": 99999
 		},
 		"list": [
